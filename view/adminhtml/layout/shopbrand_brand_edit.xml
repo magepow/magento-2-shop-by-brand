@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- /**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: DOng NGuyen<nguyen@dvn.com>
+ * @@Create Date: 2016-02-23 18:59:34
+ * @@Modify Date: 2016-04-22 17:12:54
+ * @@Function:
+ */ -->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <head>
+        <title>Brand</title>
+        <link src="Magento_ProductVideo::js/get-video-information.js"/>
+    </head>
+    <body>
+        <referenceBlock name="menu">
+            <action method="setActive">
+                <argument name="itemId" xsi:type="string">Magiccart_Shopbrand::shopbrand</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="page.main.actions">
+            <block class="Magento\Backend\Block\Store\Switcher" name="store_switcher">
+                <action method="setUseConfirm">
+                    <argument name="params" xsi:type="string">1</argument>
+                </action>
+            </block>
+        </referenceContainer>
+        <referenceContainer name="content">
+        <block class="Magiccart\Shopbrand\Block\Adminhtml\Brand\Edit" name="brand_edit"/>
+        </referenceContainer>
+        <referenceContainer name="left">
+        <block class="Magiccart\Shopbrand\Block\Adminhtml\Brand\Edit\Tabs" name="brand_edit_tabs">
+            <block class="Magiccart\Shopbrand\Block\Adminhtml\Brand\Edit\Tab\Form" name="brand_edit_tab_form"/>
+            <action method="addTab">
+                <argument name="name" xsi:type="string">main_section</argument>
+                <argument name="block" xsi:type="string">brand_edit_tab_form</argument>
+            </action>
+
+<!--             <block class="Magiccart\Shopbrand\Block\Adminhtml\Brand\Edit\Tab\RelatedProducts.php" name="shopbrand_edit_tab_relatedproducts"/>
+            <action method="addTab">
+                <argument name="name" xsi:type="string">relatedproducts_section</argument>
+                <argument name="block" xsi:type="string">shopbrand_edit_tab_relatedproducts</argument>
+            </action> -->
+        </block>
+        </referenceContainer>
+    </body>
+</page>

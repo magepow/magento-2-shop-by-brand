@@ -1,0 +1,13 @@
+<?php
+	$brand = $this->getBrand();
+	if(!$brand) return;
+?>
+<div class="brand">
+    <!-- <h2><?php echo __('Brand') ?></h2> -->
+	<a href="<?php echo $this->getUrlBrand($brand) ?>">
+		<span><?php echo __($brand->getLabel()) ?></span>
+		<?php if($brand->getData('image')) : ?>
+		<img class="brand img-responsive" src="<?php /* @escapeNotVerified */ echo $this->getImage($brand)?>" alt="<?php /* @escapeNotVerified */ echo __($brand->getTitle()) ?>" title="<?php /* @escapeNotVerified */ echo __($brand->getTitle()) ?>" />
+		<?php endif ?>
+	</a>
+</div>

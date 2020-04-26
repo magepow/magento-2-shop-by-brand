@@ -1,0 +1,68 @@
+<?php
+/**
+ * Magiccart 
+ * @category 	Magiccart 
+ * @copyright 	Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license 	http://www.magiccart.net/license-agreement.html
+ * @Author: DOng NGuyen<nguyen@dvn.com>
+ * @@Create Date: 2016-05-08 22:57:12
+ * @@Modify Date: 2018-03-15 00:53:41
+ * @@Function:
+ */
+ ?>
+<?php 
+if(!$this->getEnabled()) return;
+$selector = 'alo-content-'.rand(0,999999999);
+$brands = $this->getBrands();
+$numTabs = count($brands);
+if(!$numTabs) return;
+?>
+<div class= "<?php /* @escapeNotVerified */ echo $selector?> magicproduct autoplay">
+    <?php /* @escapeNotVerified */ echo $this->getTitle() ? '<h3 class="title">' . '<span>' .$this->getTitle(). '</span>' . '</h3>' : '' ?>
+    <div class="shopbrand-box">
+    	<div class="magictabs" data-ajax ='<?php echo $this->getAjaxCfg() ?>'>
+			<div class="shopbrand"
+			<?php foreach ($this->getFrontendCfg() as $opt) :?>
+				data-<?php /* @escapeNotVerified */ echo $opt ?>='<?php /* @escapeNotVerified */ echo $this->getData($opt) ?>'
+			<?php endforeach;?>  
+			>
+			<?php $activated = 'activated'; //$this->getTabActivated();
+				$single = ($numTabs ==1) ? 'single' : '';
+				foreach ($brands as $brand):
+					$type = $brand->getData('option_id'); //$brand->getShopbrandId();
+					if($activated){
+						$status = "activated loaded $single";
+						$activated = '';
+					} else $status = '';
+					/* @escapeNotVerified */ echo '<div class="item '.$status.'" data-type ="'.$type.'"><img class="brand img-responsive" src="' . $this->getImage($brand) .' " alt="' . __($brand->getTitle()) . '" title="' .__($brand->getTitle()) .'" /></div>';
+				endforeach;
+			?>
+			</div>
+	    </div>
+		<div class="ajax_loading" style="display:none" data-url="<?php /* @escapeNotVerified */ echo $this->getUrl('shopbrand/index/product', array('_type' => 'direct_link'))?>"></div>
+		<div class="content-products" 
+		<?php foreach ($this->getFrontendProductCfg() as $opt) :?>
+			data-<?php /* @escapeNotVerified */ echo $opt ?>='<?php /* @escapeNotVerified */ echo $this->getProductCfg($opt) ?>'
+		<?php endforeach;?>        
+		>
+		<?php 
+			// $timer = $this->getTimer();
+			// if($timer) echo $this->getContent('product/gridtimer.phtml');	
+			// else echo $this->getContent('product/grid.phtml');	
+			echo $this->getContent('product/grid.phtml');	
+		?>
+		</div>
+	</div>
+</div>
+<script type="text/javascript">
+    //require(['magicproduct']);
+    require([
+        'jquery',
+        'magiccart/slick',
+        'alothemes',
+        ], function($, slick, alothemes){
+            var shopbrand  = $('.<?php echo $selector ?> .shopbrand');
+            if(shopbrand.length) $('head').append(magicproduct(shopbrand, '.item'));
+    });
+	require(['magicproduct']);
+</script>

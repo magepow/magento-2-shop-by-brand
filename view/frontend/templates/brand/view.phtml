@@ -1,0 +1,19 @@
+<?php 
+$_brand  = $this->getBrand();
+$_helper = Mage::helper('shopbrand');
+$description = $this->getDescription();
+?>
+
+<div class="page-title category-title">
+	<h1><?php echo $_brand->getTitle(); ?></h1>
+</div>
+<!-- 
+<?php if(file_exists($_helper->getBrandMediaPath() . $_brand->getImage())): ?>
+    <p class="brand-image"><img src="<?php echo $_helper->getBrandMediaUrl() . $_brand->getImage() ?>" alt="<?php echo $_brand->getTitle() ?>" title="<?php echo $_brand->getTitle() ?>" /></p>
+<?php endif; ?> -->
+
+<?php 
+	echo $description ? '<div class="description">' .$description. '</div>' : '';
+	echo $this->getChildHtml('brand_product_list'); //display products associated with this brand 
+ ?>
+

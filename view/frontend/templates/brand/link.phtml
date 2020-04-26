@@ -1,0 +1,21 @@
+<!--Code to include shopbrand menu -->
+<?php 
+$brandCollection = $this->getBrandCollection();
+$_helper = Mage::helper('shopbrand');
+$_helperBrand = Mage::helper('shopbrand/brand');
+if (!count($brandCollection)) return;
+?>
+<li class="current shop-by-brand">
+<!--     <a href="<?php echo $this->getUrl('shopbrand') ?>"><?php echo $this->__('Shop By Brand') ?></a> -->
+    <ul>
+        <?php foreach ($brandCollection as $_brand) : ?>
+            <li>
+                <a class="brand" href="<?php echo $_helperBrand->getUrl($_brand->getUrlkey()); ?>" >
+                    <?php if(file_exists($_helper->getBrandMediaPath() . $_brand->getImage())): ?>
+                        <img src="<?php echo $_helper->getBrandMediaUrl() . $_brand->getImage() ?>" alt="<?php echo $_brand->getTitle() ?>" title="<?php echo $_brand->getTitle() ?>"/>
+                    <?php endif; ?>
+                </a>
+            </li>
+        <?php endforeach ?>
+    </ul>
+</li>

@@ -1,0 +1,24 @@
+{
+  "name": "magiccart/module-shopbrand",
+  "description": "Shop Brand magento 2.",
+  "type": "magento2-module",
+  "version": "100.0.2",
+  "license": [
+    "OSL-3.0",
+    "AFL-3.0"
+  ],
+  "authors": [
+    {
+      "name": "Alothemes",
+      "email": "support@alothemes.com",
+      "homepage": "https://alothemes.com",
+      "role": "Technical Support"
+    }
+  ],
+  "autoload": {
+    "files": [ "registration.php" ],
+    "psr-4": {
+      "Magiccart\\Shopbrand\\": ""
+    }
+  }
+}

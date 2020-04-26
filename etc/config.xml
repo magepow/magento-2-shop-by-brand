@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+<!-- /**
+ * Magiccart 
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
+ * @Author: DOng NGuyen<nguyen@dvn.com>
+ * @@Create Date: 2016-02-23 18:59:34
+ * @@Modify Date: 2017-08-31 00:56:37
+ * @@Function:
+ */ -->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+	    <shopbrand>
+            <general>
+                <enabled>1</enabled>
+                <title>Brands</title>
+                <attributeCode>manufacturer</attributeCode>
+                <link>2</link>
+                <slide>1</slide>
+                <vertical>false</vertical>
+                <infinite>true</infinite>
+                <autoplay>true</autoplay>
+                <dots>false</dots>
+                <rows>1</rows>
+                <speed>300</speed>
+                <autoplay-Speed>3000</autoplay-Speed>
+                <padding>15</padding>
+                <mobile>1</mobile>
+                <portrait>2</portrait>
+                <landscape>3</landscape>
+                <tablet>4</tablet>
+                <notebook>5</notebook>
+                <laptop>5</laptop>
+                <desktop>5</desktop>
+                <visible>6</visible>
+            </general>
+            <product>
+                <!-- <enabled>1</enabled> -->
+                <ajax>1</ajax>
+                <limit>12</limit>
+                <slide>0</slide>
+                <vertical>false</vertical>
+                <infinite>true</infinite>
+                <autoplay>true</autoplay>
+                <dots>false</dots>
+                <rows>1</rows>
+                <speed>300</speed>
+                <autoplay-Speed>3000</autoplay-Speed>
+                <padding>15</padding>
+                <mobile>1</mobile>
+                <portrait>2</portrait>
+                <landscape>3</landscape>
+                <tablet>3</tablet>
+                <notebook>4</notebook>
+                <laptop>4</laptop>
+                <desktop>4</desktop>
+                <visible>5</visible>
+            </product>
+	    </shopbrand>
+	</default>
+</config>
