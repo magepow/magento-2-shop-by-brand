@@ -1,9 +1,9 @@
 <?php
 /**
  * Magiccart 
- * @category 	Magiccart 
- * @copyright 	Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
- * @license 	http://www.magiccart.net/license-agreement.html
+ * @category    Magiccart 
+ * @copyright   Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
+ * @license     http://www.magiccart.net/license-agreement.html
  * @Author: DOng NGuyen<nguyen@dvn.com>
  * @@Create Date: 2016-01-05 10:40:51
  * @@Modify Date: 2020-04-26 17:38:38
@@ -15,7 +15,6 @@ namespace Magiccart\Shopbrand\Block\Widget;
 
 class Brand extends \Magento\Framework\View\Element\Template implements \Magento\Widget\Block\BlockInterface
 {
-
     public $_sysCfg;
 
     protected $_imageFactory;
@@ -67,24 +66,24 @@ class Brand extends \Magento\Framework\View\Element\Template implements \Magento
     protected function _construct()
     {
 
-		$data = $this->_sysCfg->general;
-		//$dataConvert = array('infinite', 'vertical', 'autoplay', 'centerMode');
-		if($data['slide']){
-			$data['vertical-Swiping'] = $data['vertical'];
+        $data = $this->_sysCfg->general;
+        //$dataConvert = array('infinite', 'vertical', 'autoplay', 'centerMode');
+        if($data['slide']){
+            $data['vertical-Swiping'] = $data['vertical'];
             $breakpoints = $this->getResponsiveBreakpoints();
             $responsive = '[';
             $num = count($breakpoints);
             foreach ($breakpoints as $size => $opt) {
-            	$item = (int) $data[$opt];
-            	$responsive .= '{"breakpoint": "'.$size.'", "settings": {"slidesToShow": "'.$item.'"}}';
+                $item = (int) $data[$opt];
+                $responsive .= '{"breakpoint": "'.$size.'", "settings": {"slidesToShow": "'.$item.'"}}';
                 $num--;
-            	if($num) $responsive .= ', ';
+                if($num) $responsive .= ', ';
             }
             $responsive .= ']';
             $data['slides-To-Show'] = $data['visible'];
             $data['swipe-To-Slide'] = 'true';
-			$data['responsive'] = $responsive;
-		}
+            $data['responsive'] = $responsive;
+        }
 
         // $data['selector'] = 'alo-slider'.md5(rand());
         $this->addData($data);
@@ -106,7 +105,7 @@ class Brand extends \Magento\Framework\View\Element\Template implements \Magento
             $routeParams = [
                 // 'shopbrand_id' => $id
             ];
-            $class      = 'brand'; //basename(__FILE__, ".php");
+            $class      = 'Brand'; //basename(__FILE__, ".php");
             $adminPath  = 'shopbrand/' . strtolower($class) . '/index';
             $editUrl    = $this->getAdminUrl($adminPath, $routeParams);
             $moduleName = $this->getModuleName();
