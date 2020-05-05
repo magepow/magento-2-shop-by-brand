@@ -12,7 +12,6 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <head>
         <title>Brand</title>
-        <link src="Magento_ProductVideo::js/get-video-information.js"/>
     </head>
     <body>
         <referenceBlock name="menu">
