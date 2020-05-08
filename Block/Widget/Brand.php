@@ -108,12 +108,17 @@ class Brand extends \Magento\Framework\View\Element\Template implements \Magento
             $class      = 'Brand'; //basename(__FILE__, ".php");
             $adminPath  = 'shopbrand/' . strtolower($class) . '/index';
             $editUrl    = $this->getAdminUrl($adminPath, $routeParams);
+            $configUrl  = $this->getAdminUrl('adminhtml/system_config/edit/section/shopbrand');
             $moduleName = $this->getModuleName();
             $moduleName = str_replace('_', ' > ', $moduleName);
             $quickedit  = [
                 [
                     'title' => __('%1 > %2 :', $moduleName, $class),
                     'url'   => $editUrl
+                ],
+                [
+                    'title' => __('System > Stores > Configuration > Magiccart > Shop Brand'),
+                    'url'   => $configUrl
                 ],
                 [
                     'title' => __('Edit'),
