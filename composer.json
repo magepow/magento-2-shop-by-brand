@@ -1,6 +1,9 @@
 {
   "name": "magiccart/shopbrand",
   "description": "Shop Brand magento 2.",
+  "require": {
+    "magiccart/community" : ">=1.0"
+  },
   "type": "magento2-module",
   "license": [
     "OSL-3.0",
