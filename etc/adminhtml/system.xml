@@ -19,7 +19,7 @@
         <section id="shopbrand" translate="label" type="text" sortOrder="300" showInDefault="1" showInWebsite="1" showInStore="1">
             <class>separator-top</class>
             <label>Shop Brand</label>
-            <tab>Magiccart</tab>
+            <tab>magiccart</tab>
             <resource>Magiccart_Shopbrand::config_shopbrand</resource>
             <group id="general" translate="label" type="text" sortOrder="0" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>General</label>
