@@ -12,7 +12,7 @@
  ?>
 <?php 
 if(!$this->getEnabled()) return;
-$selector = 'alo-content-'.rand(0,999999999);
+$selector = 'alo-content-'.uniqid();
 $brands = $this->getBrands();
 $numTabs = count($brands);
 if(!$numTabs) return;
@@ -39,7 +39,7 @@ if(!$numTabs) return;
 			?>
 			</div>
 	    </div>
-		<div class="ajax_loading" style="display:none" data-url="<?php /* @escapeNotVerified */ echo $this->getUrl('shopbrand/index/product', array('_type' => 'direct_link'))?>"></div>
+		<div class="ajax_loading" style="display:none" data-url="<?php /* @escapeNotVerified */ echo $this->getUrl('shopbrand/index/product', array('_secure'=>$this->getRequest()->isSecure()))?>"></div>
 		<div class="content-products" 
 		<?php foreach ($this->getFrontendProductCfg() as $opt) :?>
 			data-<?php /* @escapeNotVerified */ echo $opt ?>='<?php /* @escapeNotVerified */ echo $this->getProductCfg($opt) ?>'
