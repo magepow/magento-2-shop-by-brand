@@ -4,11 +4,11 @@
 ### ✓ Install Magiccart Shopbrand via composer (recommend)
 Run the following command in Magento 2 root folder:
 
-`composer require magiccart/shopbrand`
-
-`php bin/magento setup:upgrade`
-
-`php bin/magento setup:static-content:deploy -f`
+```
+composer require magiccart/shopbrand
+php bin/magento setup:upgrade
+php bin/magento setup:static-content:deploy -f
+```
 
 ## 2. Look in Frontend
 ![widget-img](https://github.com/magiccart/magento2-shopbrand/blob/master/media/shopbrand_frontend.jpg)
@@ -22,6 +22,13 @@ Run the following command in Magento 2 root folder:
 
 ## 3. ShopBrand Magento Extension User Guide
 * [Document](https://docs.alothemes.com/m2/theme/gecko/#sub63)
+
+## Donation
+
+If this project help you reduce time to develop, you can give me a cup of coffee :) 
+
+[![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/paypalme/alopay)
+
 
 **Free Extensions List**
 
