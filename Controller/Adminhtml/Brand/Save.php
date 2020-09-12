@@ -55,7 +55,7 @@ class Save extends \Magiccart\Shopbrand\Controller\Adminhtml\Action
                     $result = $uploader->save(
                         $mediaDirectory->getAbsolutePath('magiccart/shopbrand/brand/')
                     );
-                    $data['image'] = 'magiccart/shopbrand/brand/'.$result['file'];
+                    $data['image'] = 'magiccart/shopbrand/brand'.$result['file'];
                 } catch (\Exception $e) {
                     if ($e->getCode() == 0) {
                         $this->messageManager->addError($e->getMessage());
