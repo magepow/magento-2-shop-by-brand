@@ -37,6 +37,10 @@
                     <comment>Brand attribute code</comment>
                     <source_model>Magiccart\Shopbrand\Model\System\Config\Attribute</source_model>
                 </field>
+                <field id="show_logo_on_product_page" translate="label comment" type="select" sortOrder="6"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Show logo on product page</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
                 <field id="link" translate="label comment" type="select" sortOrder="8"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Link Brand: </label>
                     <comment>Link Brand</comment>

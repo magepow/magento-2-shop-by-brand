@@ -16,6 +16,7 @@
                 <enabled>1</enabled>
                 <title>Brands</title>
                 <attributeCode>manufacturer</attributeCode>
+                <show_logo_on_product_page>1</show_logo_on_product_page>
                 <link>2</link>
                 <slide>1</slide>
                 <vertical>false</vertical>
