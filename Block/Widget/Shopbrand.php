@@ -61,6 +61,7 @@ class Shopbrand extends Brand
                 }
                 $responsive .= ']';
                 $data['slides-To-Show'] = $data['visible'];
+                $data['autoplay-Speed'] = $data['autoplay_speed'];
                 $data['swipe-To-Slide'] = 'true';
                 $data['responsive'] = $responsive;
             }

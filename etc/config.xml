@@ -6,17 +6,16 @@
  * @license     http://www.magiccart.net/license-agreement.html
  * @Author: DOng NGuyen<nguyen@dvn.com>
  * @@Create Date: 2016-02-23 18:59:34
- * @@Modify Date: 2017-08-31 00:56:37
+ * @@Modify Date: 2020-09-30 00:56:37
  * @@Function:
  */ -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
-	<default>
-	    <shopbrand>
+    <default>
+        <shopbrand>
             <general>
                 <enabled>1</enabled>
                 <title>Brands</title>
                 <attributeCode>manufacturer</attributeCode>
-                <show_logo_on_product_page>1</show_logo_on_product_page>
                 <link>2</link>
                 <slide>1</slide>
                 <vertical>false</vertical>
@@ -25,7 +24,7 @@
                 <dots>false</dots>
                 <rows>1</rows>
                 <speed>300</speed>
-                <autoplay-Speed>3000</autoplay-Speed>
+                <autoplay_speed>3000</autoplay_speed>
                 <padding>15</padding>
                 <mobile>1</mobile>
                 <portrait>2</portrait>
@@ -47,7 +46,7 @@
                 <dots>false</dots>
                 <rows>1</rows>
                 <speed>300</speed>
-                <autoplay-Speed>3000</autoplay-Speed>
+                <autoplay_speed>3000</autoplay_speed>
                 <padding>15</padding>
                 <mobile>1</mobile>
                 <portrait>2</portrait>
@@ -58,6 +57,6 @@
                 <desktop>4</desktop>
                 <visible>5</visible>
             </product>
-	    </shopbrand>
-	</default>
+        </shopbrand>
+    </default>
 </config>

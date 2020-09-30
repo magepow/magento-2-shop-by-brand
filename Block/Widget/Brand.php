@@ -6,7 +6,7 @@
  * @license     http://www.magiccart.net/license-agreement.html
  * @Author: DOng NGuyen<nguyen@dvn.com>
  * @@Create Date: 2016-01-05 10:40:51
- * @@Modify Date: 2020-04-26 17:38:38
+ * @@Modify Date: 2020-09-30 17:38:38
  * @@Function:
  */
 
@@ -81,6 +81,7 @@ class Brand extends \Magento\Framework\View\Element\Template implements \Magento
             }
             $responsive .= ']';
             $data['slides-To-Show'] = $data['visible'];
+            $data['autoplay-Speed'] = $data['autoplay_speed'];
             $data['swipe-To-Slide'] = 'true';
             $data['responsive'] = $responsive;
         }

@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+<!-- <?xml version="1.0"?> -->
 
 <!-- /**
  * Magiccart 
@@ -7,7 +7,7 @@
  * @license     http://www.magiccart.net/license-agreement.html
  * @Author: DOng NGuyen<nguyen@dvn.com>
  * @@Create Date: 2016-02-23 18:59:34
- * @@Modify Date: 2018-03-01 08:55:53
+ * @@Modify Date: 2020-09-30 08:55:53
  * @@Function:
  */ -->
  
@@ -36,10 +36,6 @@
                     <label>Attribute Brand: </label>
                     <comment>Brand attribute code</comment>
                     <source_model>Magiccart\Shopbrand\Model\System\Config\Attribute</source_model>
-                </field>
-                <field id="show_logo_on_product_page" translate="label comment" type="select" sortOrder="6"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
-                    <label>Show logo on product page</label>
-                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                 </field>
                 <field id="link" translate="label comment" type="select" sortOrder="8"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Link Brand: </label>
@@ -93,12 +89,12 @@
                     <validate>validate-zero-or-greater</validate>
                     <depends><field id="slide" separator=",">1</field></depends>
                 </field>
-                <!-- <field id="autoplay-Speed" translate="label comment" type="text" sortOrder="50"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <field id="autoplay_speed" translate="label comment" type="text" sortOrder="50"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>autoplay Speed</label>
                     <comment>autoplay Speed</comment>
                     <validate>validate-zero-or-greater</validate>
                     <depends><field id="slide" separator=",">1</field></depends>
-                </field> -->
+                </field>
                 <field id="padding" translate="label comment" type="text" sortOrder="55"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Padding</label>
                     <comment>Padding item Brand</comment>
@@ -211,12 +207,12 @@
                     <validate>validate-zero-or-greater</validate>
                     <depends><field id="slide" separator=",">1</field></depends>
                 </field>
-               <!--  <field id="autoplay-Speed" translate="label comment" type="text" sortOrder="50"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                <field id="autoplay_speed" translate="label comment" type="text" sortOrder="50"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>autoplay Speed</label>
                     <comment>autoplay Speed</comment>
                     <validate>validate-zero-or-greater</validate>
                     <depends><field id="slide" separator=",">1</field></depends>
-                </field> -->
+                </field>
                 <field id="padding" translate="label comment" type="text" sortOrder="55"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Padding</label>
                     <comment>Padding item Product</comment>
