@@ -13,8 +13,10 @@
 namespace Magiccart\Shopbrand\Block\Widget;
 // use Magento\Framework\App\Filesystem\DirectoryList;
 
-class Brand extends \Magento\Framework\View\Element\Template implements \Magento\Widget\Block\BlockInterface
+class Brand extends \Magento\Framework\View\Element\Template implements \Magento\Widget\Block\BlockInterface, \Magento\Framework\DataObject\IdentityInterface
 {
+    const DEFAULT_CACHE_TAG = 'MAGICCART_BRAND';
+
     public $_sysCfg;
 
     protected $_imageFactory;
@@ -91,6 +93,26 @@ class Brand extends \Magento\Framework\View\Element\Template implements \Magento
 
         parent::_construct();
 
+    }
+
+    protected function getCacheLifetime()
+    {
+        return parent::getCacheLifetime() ?: 86400;
+    }
+
+    public function getCacheKeyInfo()
+    {
+        $keyInfo     =  parent::getCacheKeyInfo();
+        $keyInfo[]   =  $this->_storeManager->getStore()->getStoreId();
+        return $keyInfo;
+    }
+
+    /**
+     * @return array
+     */
+    public function getIdentities()
+    {
+        return [self::DEFAULT_CACHE_TAG, self::DEFAULT_CACHE_TAG . '_' . $this->_storeManager->getStore()->getStoreId()];
     }
 
     public function getAdminUrl($adminPath, $routeParams=[], $storeCode = 'default' ) 
