@@ -96,7 +96,7 @@ If this project help you reduce time to develop, you can give me a cup of coffee
 * [Hire Magento Developer](https://magepow.com/hire-magento-developer.html)
 
 
-[![Latest Stable Version](https://poser.pugx.org/magiccart/shopbrand/v/stable)](https://packagist.org/packages/magiccart/hopbrand)
+[![Latest Stable Version](https://poser.pugx.org/magiccart/shopbrand/v/stable)](https://packagist.org/packages/magiccart/shopbrand)
 [![Total Downloads](https://poser.pugx.org/magiccart/shopbrand/downloads)](https://packagist.org/packages/magiccart/shopbrand)
 
 
