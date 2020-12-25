@@ -107,49 +107,49 @@
                 <field id="mobile" translate="label comment" type="select" sortOrder="70"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label><![CDATA[max-width 360: ]]></label>
                     <comment><![CDATA[Number product show in screen ( Size <= 360 ) ]]></comment>
-                    <source_model>Magiccart\Alothemes\Model\System\Config\Col</source_model>
+                    <source_model>Magiccart\Shopbrand\Model\System\Config\Col</source_model>
                     <validate>required-entry validate-greater-than-zero</validate>
                 </field>
                 <field id="portrait" translate="label comment" type="select" sortOrder="75"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label><![CDATA[max-width 480: ]]></label>
                     <comment><![CDATA[Number product show in screen ( 360 < Size < 480 ) ]]></comment>
-                    <source_model>Magiccart\Alothemes\Model\System\Config\Col</source_model>
+                    <source_model>Magiccart\Shopbrand\Model\System\Config\Col</source_model>
                     <validate>required-entry validate-greater-than-zero</validate>
                 </field>
                 <field id="landscape" translate="label comment" type="select" sortOrder="80"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label><![CDATA[max-width 640: ]]></label>
                     <comment><![CDATA[Number product show in screen ( 480 <= Size < 640 ) ]]></comment>
-                    <source_model>Magiccart\Alothemes\Model\System\Config\Col</source_model>
+                    <source_model>Magiccart\Shopbrand\Model\System\Config\Col</source_model>
                     <validate>required-entry validate-greater-than-zero</validate>
                 </field>
                 <field id="tablet" translate="label comment" type="select" sortOrder="85"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label><![CDATA[max-width 768: ]]></label>
                     <comment><![CDATA[Number product show in screen ( 640 <= Size < 768 ) ]]></comment>
-                    <source_model>Magiccart\Alothemes\Model\System\Config\Col</source_model>
+                    <source_model>Magiccart\Shopbrand\Model\System\Config\Col</source_model>
                     <validate>required-entry validate-greater-than-zero</validate>
                 </field>
                 <field id="notebook" translate="label comment" type="select" sortOrder="90"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label><![CDATA[max-width 991: ]]></label>
                     <comment><![CDATA[Number product show in screen ( 768 <= Size < 992 ) ]]></comment>
-                    <source_model>Magiccart\Alothemes\Model\System\Config\Col</source_model>
+                    <source_model>Magiccart\Shopbrand\Model\System\Config\Col</source_model>
                     <validate>required-entry validate-greater-than-zero</validate>
                 </field>
                 <field id="laptop" translate="label comment" type="select" sortOrder="95"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label><![CDATA[max-width 1199: ]]></label>
                     <comment><![CDATA[Number product show in screen ( 992 <= Size < 1200 ) ]]></comment>
-                    <source_model>Magiccart\Alothemes\Model\System\Config\Col</source_model>
+                    <source_model>Magiccart\Shopbrand\Model\System\Config\Col</source_model>
                     <validate>required-entry validate-greater-than-zero</validate>
                 </field>
                 <field id="desktop" translate="label comment" type="select" sortOrder="100"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label><![CDATA[max-width 1919: ]]></label>
                     <comment><![CDATA[Number product show in screen ( 1200 <= Size < 1920 ) ]]></comment>
-                    <source_model>Magiccart\Alothemes\Model\System\Config\Col</source_model>
+                    <source_model>Magiccart\Shopbrand\Model\System\Config\Col</source_model>
                     <validate>required-entry validate-greater-than-zero</validate>
                 </field>
                 <field id="visible" translate="label comment" type="select" sortOrder="105"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label><![CDATA[min-width 1920: ]]></label>
                     <comment><![CDATA[Number product show in screen ( Size >= 1920 ) ]]></comment>
-                    <source_model>Magiccart\Alothemes\Model\System\Config\Col</source_model>
+                    <source_model>Magiccart\Shopbrand\Model\System\Config\Col</source_model>
                     <validate>required-entry validate-greater-than-zero</validate>
                 </field>
             </group>
@@ -225,49 +225,49 @@
                 <field id="mobile" translate="label comment" type="select" sortOrder="70"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label><![CDATA[max-width 360: ]]></label>
                     <comment><![CDATA[Number product show in screen ( Size <= 360 ) ]]></comment>
-                    <source_model>Magiccart\Alothemes\Model\System\Config\Col</source_model>
+                    <source_model>Magiccart\Shopbrand\Model\System\Config\Col</source_model>
                     <validate>required-entry validate-greater-than-zero</validate>
                 </field>
                 <field id="portrait" translate="label comment" type="select" sortOrder="75"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label><![CDATA[max-width 480: ]]></label>
                     <comment><![CDATA[Number product show in screen ( 360 < Size < 480 ) ]]></comment>
-                    <source_model>Magiccart\Alothemes\Model\System\Config\Col</source_model>
+                    <source_model>Magiccart\Shopbrand\Model\System\Config\Col</source_model>
                     <validate>required-entry validate-greater-than-zero</validate>
                 </field>
                 <field id="landscape" translate="label comment" type="select" sortOrder="80"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label><![CDATA[max-width 640: ]]></label>
                     <comment><![CDATA[Number product show in screen ( 480 <= Size < 640 ) ]]></comment>
-                    <source_model>Magiccart\Alothemes\Model\System\Config\Col</source_model>
+                    <source_model>Magiccart\Shopbrand\Model\System\Config\Col</source_model>
                     <validate>required-entry validate-greater-than-zero</validate>
                 </field>
                 <field id="tablet" translate="label comment" type="select" sortOrder="85"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label><![CDATA[max-width 768: ]]></label>
                     <comment><![CDATA[Number product show in screen ( 640 <= Size < 768 ) ]]></comment>
-                    <source_model>Magiccart\Alothemes\Model\System\Config\Col</source_model>
+                    <source_model>Magiccart\Shopbrand\Model\System\Config\Col</source_model>
                     <validate>required-entry validate-greater-than-zero</validate>
                 </field>
                 <field id="notebook" translate="label comment" type="select" sortOrder="90"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label><![CDATA[max-width 991: ]]></label>
                     <comment><![CDATA[Number product show in screen ( 768 <= Size < 992 ) ]]></comment>
-                    <source_model>Magiccart\Alothemes\Model\System\Config\Col</source_model>
+                    <source_model>Magiccart\Shopbrand\Model\System\Config\Col</source_model>
                     <validate>required-entry validate-greater-than-zero</validate>
                 </field>
                 <field id="laptop" translate="label comment" type="select" sortOrder="95"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label><![CDATA[max-width 1199: ]]></label>
                     <comment><![CDATA[Number product show in screen ( 992 <= Size < 1200 ) ]]></comment>
-                    <source_model>Magiccart\Alothemes\Model\System\Config\Col</source_model>
+                    <source_model>Magiccart\Shopbrand\Model\System\Config\Col</source_model>
                     <validate>required-entry validate-greater-than-zero</validate>
                 </field>
                 <field id="desktop" translate="label comment" type="select" sortOrder="100"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label><![CDATA[max-width 1919: ]]></label>
                     <comment><![CDATA[Number product show in screen ( 1200 <= Size < 1920 ) ]]></comment>
-                    <source_model>Magiccart\Alothemes\Model\System\Config\Col</source_model>
+                    <source_model>Magiccart\Shopbrand\Model\System\Config\Col</source_model>
                     <validate>required-entry validate-greater-than-zero</validate>
                 </field>
                 <field id="visible" translate="label comment" type="select" sortOrder="105"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label><![CDATA[min-width 1920: ]]></label>
                     <comment><![CDATA[Number product show in screen ( Size >= 1920 ) ]]></comment>
-                    <source_model>Magiccart\Alothemes\Model\System\Config\Col</source_model>
+                    <source_model>Magiccart\Shopbrand\Model\System\Config\Col</source_model>
                     <validate>required-entry validate-greater-than-zero</validate>
                 </field>
             </group>

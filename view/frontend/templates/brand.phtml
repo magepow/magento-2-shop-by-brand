@@ -4,9 +4,9 @@ $selector = 'alo-content-'.uniqid();
 $brands = $this->getBrands();
 if(!count($brands)) return;
 ?>
-<div class="<?php /* @escapeNotVerified */ echo $selector ?>">
+<div class="<?php /* @escapeNotVerified */ echo $selector ?>" data-mage-init='{"gridSlider": {}}'>
     <?php /* @escapeNotVerified */ echo $this->getTitle() ? '<h2 class="title item">' . '<span>' . $this->getTitle() . '</span>' . '</h2>' : '' ?>
-    <div class="shopbrand"
+    <div class="shopbrand grid-slider"
     <?php foreach ($this->getFrontendCfg() as $opt) :?>
         data-<?php /* @escapeNotVerified */ echo $opt ?>='<?php /* @escapeNotVerified */ echo $this->getData($opt) ?>'
     <?php endforeach;?>  
@@ -20,13 +20,3 @@ if(!count($brands)) return;
         <?php endforeach ?>
     </div>
 </div>
-<script type="text/javascript">
-    require([
-        'jquery',
-        'magiccart/slick',
-        'alothemes',
-        ], function($, slick, alothemes){
-            var shopbrand  = $('.<?php echo $selector ?> .shopbrand');
-            if(shopbrand.length) $('head').append(magicproduct(shopbrand, '.item'));
-    });
-</script>

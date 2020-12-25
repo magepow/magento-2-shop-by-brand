@@ -18,29 +18,17 @@ use Magento\Framework\App\Action\Action;
 <?php
 $_productCollection = $block->getLoadedProductCollection();
 $_helper = $this->helper('Magento\Catalog\Helper\Output');
-$_aloHelper = $this->helper('Magiccart\Alothemes\Helper\Data');
+$_aloHelper = $this->helper('Magiccart\Shopbrand\Helper\Alothemes');
 ?>
 <div class="mage-magictabs mc-<?php echo $this->escapeHtml($this->getType());?>">
 <?php if (!$_productCollection->count()): ?>
     <div class="message info empty"><div><?php /* @escapeNotVerified */ echo __('We can\'t find products matching the selection.') ?></div></div>
 <?php else: ?>
-    <?php //echo $block->getToolbarHtml() ?>
-    <?php //echo $block->getAdditionalHtml() ?>
     <?php
-    // if ($block->getMode() == 'grid') {
         $viewMode = 'grid';
         $image = 'category_page_grid';
         $showDescription = false;
         $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::SHORT_VIEW;
-    // } else {
-    //     $viewMode = 'list';
-    //     $image = 'category_page_list';
-    //     $showDescription = true;
-    //     $templateType = \Magento\Catalog\Block\Product\ReviewRendererInterface::FULL_VIEW;
-    // }
-    /**
-     * Position for actions regarding image size changing in vde if needed
-     */
     $pos = $block->getPositioned();
     ?>
     <?php 

@@ -18,14 +18,12 @@ use Magento\Framework\App\Action\Action;
 <?php
 $_productCollection = $block->getLoadedProductCollection();
 $_helper = $this->helper('Magento\Catalog\Helper\Output');
-$_aloHelper = $this->helper('Magiccart\Alothemes\Helper\Data');
+$_aloHelper = $this->helper('Magiccart\Shopbrand\Helper\Alothemes');
 ?>
 <div class="mage-magictabs mc-<?php echo $this->escapeHtml($this->getTypeFilter());?>">
 <?php if (!$_productCollection->count()): ?>
     <div class="message info empty"><div><?php /* @escapeNotVerified */ echo __('We can\'t find products matching the selection.') ?></div></div>
 <?php else: ?>
-    <?php //echo $block->getToolbarHtml() ?>
-    <?php //echo $block->getAdditionalHtml() ?>
     <?php
         $viewMode = 'grid';
         $image = 'category_page_grid';
@@ -144,7 +142,6 @@ $_aloHelper = $this->helper('Magiccart\Alothemes\Helper\Data');
             <?php endforeach; ?>
         </ol>
     </div>
-    <?php // echo $block->getToolbarHtml() ?>
     <?php if (!$block->isRedirectToCartEnabled()) : ?>
         <script type="text/x-magento-init">
         {
