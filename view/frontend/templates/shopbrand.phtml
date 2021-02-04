@@ -34,7 +34,7 @@ if(!$numTabs) return;
 						$status = "activated loaded $single";
 						$activated = '';
 					} else $status = '';
-					/* @escapeNotVerified */ echo '<div class="item '.$status.'" data-type ="'.$type.'"><img class="brand img-responsive" src="' . $this->getImage($brand) .' " alt="' . __($brand->getTitle()) . '" title="' .__($brand->getTitle()) .'" /></div>';
+					/* @escapeNotVerified */ echo '<div class="item '.$status.'" data-type ="'.$type.'"><img class="brand img-responsive" src="' . $this->getImage($brand) .'" alt="' . __($brand->getTitle()) . '" title="' .__($brand->getTitle()) .'" /></div>';
 				endforeach;
 			?>
 			</div>
