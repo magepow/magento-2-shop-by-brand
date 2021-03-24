@@ -1,0 +1,73 @@
+<?php
+/**
+ *
+ * @var $block \Magiccart\Shopbrand\Block\ListBrand
+ * 
+ */
+?>
+<?php
+$selector = 'alo-content-'.uniqid();
+$helper = $this->_helper;
+$productCount = $helper->getConfigModule('list_page_settings/show_product_count');
+$brands = $block->getBrands();
+$keyword = $this->getRequest()->getParam('keyword');
+?>
+<?php echo $block->getChildHtml('brand_filter_by_character'); ?>
+<div class="shop-by-brand <?php /* @escapeNotVerified */ echo $selector ?>" >
+    <div class="block block-search brand-search">
+        <form class="form minisearch form-search brand-form-search" id="shopbrand_search_mini_form" action="<?php echo $helper->getUrlRouter() ?>" method="get">
+            <div class="field search">
+                <label class="label brand-label" for="brand-search">
+                    <span><?php echo __('Search brand') ?></span>
+                </label>
+                <div class="control-search">
+                    <input class ="keyword" type="text" name="keyword" placeholder="<?php echo __('Search a brand') ?>" value="<?php echo $block->escapeHtml($keyword) ?>"/>
+                </div>
+                <div class="actions">
+                    <button type="submit" title="<?php echo __('Search') ?>" class="action search">
+                        <span><?php echo __('Search') ?></span>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </div>
+<?php if(!$brands->count()) : ?>
+    <div class="message info empty"><div><?= $block->escapeHtml(__('We can\'t find brands matching the selection')) ?></div></div>
+<?php return;?>
+<?php endif;?>
+    <div class="shopbrand">
+        <div class="brand-list grid-slider"
+            <?php foreach ($this->getFrontendCfg() as $opt) :?>
+                data-<?php /* @escapeNotVerified */ echo $opt ?>='<?php /* @escapeNotVerified */ echo $this->getData($opt) ?>'
+            <?php endforeach;?>  
+        >
+        <?php foreach ($brands as $brand) : ?>
+            <?php $href = $helper->getLinkBrand($brand); ?>
+            <div class="item">
+                <div class="image">
+                    <a href="<?= /* @escapeNotVerified */ $href ?>">
+                        <img class="img-responsive" src="<?= /* @escapeNotVerified */ $helper->getMediaUrl($brand->getImage()) ?>" alt="<?= /* @escapeNotVerified */ $brand->getName(); ?>"/>
+                    </a>
+                </div>
+                <div class="name">
+                    <a class="link-brand" href="<?= /* @escapeNotVerified */ $href ?>">
+                        <?= $brand->getTitle(); ?>
+                        <?php if ($productCount): ?>
+                            <span>(<?= $block->getProductCount($brand) ?>)</span>
+                        <?php endif ?>
+                    </a>
+                </div>
+            </div>
+        <?php endforeach; ?>
+        </div> 
+    </div>
+</div>
+<script type="text/javascript">
+    require([
+        'jquery',
+        'gridSlider',
+        ], function($, gridSlider){
+            var el  = $('.<?php echo $selector ?>');
+            if(el.length) el.gridSlider();
+    });
+</script>

@@ -13,11 +13,11 @@
 	<body>
 		<referenceContainer name="content">
 <!-- 			<referenceContainer name="product.info.main">
-				<block class="Magiccart\Shopbrand\Block\Product\View" ifconfig="shopbrand/general/show_logo_on_product_page" name="product.info.shopbrand" after="product.info.price" template="Magiccart_Shopbrand::product/view/logo.phtml" />
+				<block class="Magiccart\Shopbrand\Block\Product\View" ifconfig="shopbrand/product_page_settings/show_brand_logo" name="product.info.shopbrand" after="product.info.price" template="Magiccart_Shopbrand::product/view/logo.phtml" />
 			</referenceContainer> -->
 
 			<referenceContainer name="page.main.title">
-				<block class="Magiccart\Shopbrand\Block\Product\View" ifconfig="shopbrand/general/show_logo_on_product_page" name="product.info.shopbrand" after="page.title" template="Magiccart_Shopbrand::product/view/logo.phtml" />
+				<block class="Magiccart\Shopbrand\Block\Product\View" ifconfig="shopbrand/product_page_settings/show_brand_logo" name="product.info.shopbrand" after="page.title" template="Magiccart_Shopbrand::product/view/logo.phtml" />
 			</referenceContainer>
 			
 		</referenceContainer>

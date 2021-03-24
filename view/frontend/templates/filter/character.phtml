@@ -1,0 +1,27 @@
+<?php
+/**
+ *
+ * @var $block \Magento\Framework\View\Element\Template
+ * 
+ */
+?>
+<?php
+$helper = $this->helper('Magiccart\Shopbrand\Helper\Data');
+$params = $this->getRequest()->getParams();
+?>
+<div class="characters">
+    <ul class="filter">
+        <?php if (isset($params['keyword']) && $params['keyword'] != ''): ?>
+            <li class="char <?php if (isset($params['char']) && $params['char'] == '0-9'): ?>active<?php endif; ?>"><a title="<?php echo __('0-9'); ?>" href="<?php echo $helper->getBrandUrl('?keyword=0-9', false); ?>"><?php echo __('0-9'); ?></a></li>
+            <?php foreach (range('a', 'z') as $char): ?>
+                <li class=char "<?php if (isset($params['char']) && $params['char'] == $char): ?>active<?php endif; ?>"><a href="<?php echo $helper->getBrandUrl("?keyword=$char", false); ?>"><?php echo $char; ?></a></li>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <li class=char "<?php if (isset($params['char']) && $params['char'] == '0-9'): ?>active<?php endif; ?>"><a title="<?php echo __('0-9'); ?>" href="<?php echo $helper->getBrandUrl('?keyword=0-9') ; ?>"><?php echo __('0-9'); ?></a></li>
+            <?php foreach (range('a', 'z') as $char): ?>
+                <li class="char <?php if (isset($params['char']) && $params['char'] == $char): ?>active<?php endif; ?>"><a href="<?php echo $helper->getBrandUrl("?keyword=$char", false); ?>"><?php echo $char; ?></a></li>
+            <?php endforeach; ?>
+        <?php endif; ?>
+        <li  class="view-all char"><a title="<?php echo __('View all'); ?>" href="<?php echo $helper->getBrandUrl(); ?>"><?php echo __('All'); ?></a></div>
+    </ul>
+</div>

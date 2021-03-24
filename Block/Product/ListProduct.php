@@ -65,7 +65,21 @@ class ListProduct extends \Magento\Catalog\Block\Product\ListProduct
      * @var \Magento\Store\Model\StoreManagerInterface
      */
     protected $_objectManager;
-    
+    /**
+     * [$_brandFactory description]
+     * @var \Magiccart\Shopbrand\Model\ShopbrandFactory 
+     */
+    protected $_brandFactory;
+    /**
+     * [$_limit description]
+     * @var [type]
+     */
+    protected $_limit; // Limit Product
+    /**
+     * [$_helperData description]
+     * @var [type]
+     */
+    protected $_helperData;
     /**
      * Initialize
      *
@@ -84,7 +98,9 @@ class ListProduct extends \Magento\Catalog\Block\Product\ListProduct
         \Magento\Catalog\Model\Layer\Resolver $layerResolver, 
         CategoryRepositoryInterface $categoryRepository,
         \Magento\Framework\Url\Helper\Data $urlHelper,
-
+        \Magento\Eav\Model\Config $eavConfig,
+        \Magiccart\Shopbrand\Model\ShopbrandFactory $brandFactory,
+        \Magiccart\Shopbrand\Helper\Data $helperData,
         \Magento\Framework\ObjectManagerInterface $objectManager,
         \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollectionFactory,
         \Magento\Catalog\Model\Product\Visibility $catalogProductVisibility,
@@ -94,7 +110,9 @@ class ListProduct extends \Magento\Catalog\Block\Product\ListProduct
         $this->_postDataHelper = $postDataHelper;
         $this->categoryRepository = $categoryRepository;
         $this->urlHelper = $urlHelper;
-
+        $this->_brandFactory = $brandFactory;
+        $this->_helperData = $helperData;
+        $this->_eavConfig = $eavConfig;
         $this->_objectManager = $objectManager;
         $this->_productCollectionFactory = $productCollectionFactory;
         $this->_catalogProductVisibility = $catalogProductVisibility;
@@ -103,12 +121,10 @@ class ListProduct extends \Magento\Catalog\Block\Product\ListProduct
     }
 
     public function getType()
-    {
-        $type = $this->getRequest()->getParam('type');
-        if(!$type){
-            $type = $this->getActive(); // get form setData in Block
-        }
-        return $type;
+    {   
+        $brandId = $this->getRequest()->getParam('id', 0);
+        $option_id = $this->_brandFactory->create()->load($brandId);
+        return $option_id;
     }
 
     public function getWidgetCfg($cfg=null)
@@ -127,7 +143,7 @@ class ListProduct extends \Magento\Catalog\Block\Product\ListProduct
     protected function _getProductCollection()
     {
         if (is_null($this->_productCollection)) {
-            $type = $this->getType();
+            $type = $this->getType()->getData('option_id');
             $collection = $this->getBrandProducts($type);
             $this->_productCollection = $collection;
         }
@@ -136,11 +152,12 @@ class ListProduct extends \Magento\Catalog\Block\Product\ListProduct
 
 
     public function getBrandProducts($brand)
-    {
-
+    {   
+        $attributeCode = $this->_helperData->getConfigModule('general/attributeCode');
+        $this->_limit = $this->getWidgetCfg('limit');
         $collection = $this->_productCollectionFactory->create();
         $collection->setVisibility($this->_catalogProductVisibility->getVisibleInCatalogIds());
-        $collection->addAttributeToFilter('manufacturer', $brand)
+        $collection->addAttributeToFilter($attributeCode, $brand)
                     ->addStoreFilter()
                     ->addAttributeToSelect('*')
                     ->addMinimalPrice()
@@ -151,5 +168,7 @@ class ListProduct extends \Magento\Catalog\Block\Product\ListProduct
         return $collection;
 
     }
+
+
 
 }

@@ -28,8 +28,12 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
     /**
      * @var \Magiccart\Shopbrand\Model\Shopbrand
      */
-
     protected $_shopbrand;
+
+    /**
+     * @var \Magiccart\Shopbrand\Helper\Data
+     */
+    protected $_helper;
 
     /**
      * @var \Magento\Store\Model\System\Store
@@ -50,11 +54,13 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
         \Magento\Cms\Model\Wysiwyg\Config $wysiwygConfig,
         \Magiccart\Shopbrand\Model\Shopbrand $shopbrand,
         \Magiccart\Shopbrand\Model\System\Config\Brand $brand,
+        \Magiccart\Shopbrand\Helper\Data $helper,
         array $data = []
     ) {
         $this->_objectFactory = $objectFactory;
         $this->_shopbrand = $shopbrand;
         $this->_brand   = $brand;
+        $this->_helper  = $helper;
         $this->_systemStore = $systemStore;
         $this->_wysiwygConfig = $wysiwygConfig;
         parent::__construct($context, $registry, $formFactory, $data);
@@ -105,7 +111,8 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
                 'label' => __('URL key'),
                 'title' => __('URL key'),
                 'name'  => 'urlkey',
-                'required' => false,
+                'required' => true,
+                'class' => 'validate-xml-identifier',
             ]
         );
 
@@ -148,7 +155,17 @@ class Form extends \Magento\Backend\Block\Widget\Form\Generic implements \Magent
                 'required' => true,
             ]
         );
-
+        
+        $fieldset->addField('description', 'editor', [
+            'name'   => 'description',
+            'label'  => __('Description'),
+            'title'  => __('Description'),
+            'config' => $this->_wysiwygConfig->getConfig([
+                'add_variables'  => false,
+                'add_widgets'    => true,
+                'add_directives' => true
+            ])
+        ]);
         /* Check is single store mode */
         if (!$this->_storeManager->isSingleStoreMode()) {
             $field = $fieldset->addField(

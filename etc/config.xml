@@ -15,8 +15,12 @@
             <general>
                 <enabled>1</enabled>
                 <title>Brands</title>
+                <router>shopbrand</router>
+                <url_suffix>.html</url_suffix>
+                <topmenulink>1</topmenulink>
                 <attributeCode>manufacturer</attributeCode>
-                <link>2</link>
+                <page_layout>1column</page_layout>
+                <link>0</link>
                 <slide>1</slide>
                 <vertical>false</vertical>
                 <infinite>true</infinite>
@@ -33,8 +37,47 @@
                 <notebook>5</notebook>
                 <laptop>5</laptop>
                 <desktop>5</desktop>
+                <widescreen>6</widescreen>
                 <visible>6</visible>
             </general>
+            <list_page_settings>
+                <title_sidebar_brand>Shop By Brand</title_sidebar_brand>
+                <show_product_count>1</show_product_count>
+                <slide>0</slide>
+                <vertical>false</vertical>
+                <infinite>true</infinite>
+                <autoplay>true</autoplay>
+                <dots>false</dots>
+                <rows>1</rows>
+                <speed>300</speed>
+                <autoplay_speed>3000</autoplay_speed>
+                <padding>15</padding>
+                <mobile>1</mobile>
+                <portrait>2</portrait>
+                <landscape>3</landscape>
+                <tablet>4</tablet>
+                <notebook>5</notebook>
+                <laptop>5</laptop>
+                <desktop>5</desktop>
+                <widescreen>6</widescreen>
+                <visible>6</visible>
+            </list_page_settings>
+            <brand_page_settings>
+                <sidebar_shopbybrand>1</sidebar_shopbybrand>
+                <mobile>1</mobile>
+                <portrait>2</portrait>
+                <landscape>3</landscape>
+                <tablet>3</tablet>
+                <notebook>4</notebook>
+                <laptop>4</laptop>
+                <desktop>4</desktop>
+                <widescreen>5</widescreen>
+                <visible>5</visible>
+                <padding>15</padding>
+            </brand_page_settings>
+            <product_page_settings>
+                <show_brand_logo>1</show_brand_logo>
+            </product_page_settings>
             <product>
                 <!-- <enabled>1</enabled> -->
                 <ajax>1</ajax>
@@ -55,6 +98,7 @@
                 <notebook>4</notebook>
                 <laptop>4</laptop>
                 <desktop>4</desktop>
+                <widescreen>5</widescreen>
                 <visible>5</visible>
             </product>
         </shopbrand>

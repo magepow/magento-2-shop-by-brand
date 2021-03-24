@@ -34,7 +34,7 @@ class Product extends \Magiccart\Shopbrand\Controller\Index
 					           	->toHtml();
 	        $this->getResponse()->setBody( $products );
 	    }else {
-	        $resultRedirect = $this->resultFactory->create(ResultFactory::TYPE_REDIRECT);
+	        $resultRedirect = $this->_resultPageFactory->create(ResultFactory::TYPE_REDIRECT);
 	        $resultRedirect->setUrl($this->_redirect->getRefererUrl());
 	        return $resultRedirect;
 	    }

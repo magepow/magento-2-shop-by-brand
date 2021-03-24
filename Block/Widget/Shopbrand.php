@@ -55,7 +55,7 @@ class Shopbrand extends Brand
                 $num = count($breakpoints);
                 foreach ($breakpoints as $size => $opt) {
                     $item = (int) $data[$opt];
-                    $responsive .= '{"breakpoint": "'.$size.'", "settings": {"slidesToShow": "'.$item.'"}}';
+                    $responsive .= '{"breakpoint": '.$size.', "settings": {"slidesToShow": '.$item.'}}';
                     $num--;
                     if($num) $responsive .= ', ';
                 }

@@ -14,23 +14,37 @@ namespace Magiccart\Shopbrand\Model;
 
 class Shopbrand extends \Magento\Framework\Model\AbstractModel
 {
-
-    protected $_scopeConfig;
-    protected $_shopbrandCollectionFactory;
+    /**
+     * @var \Magento\Catalog\Model\Product\Visibility
+     */
+    protected $_catalogProductVisibility;
 
     /**
      * @var \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory
      */
     protected $_productCollectionFactory;
 
+    /**
+     * @var \Magiccart\Shopbrand\Helper\Data
+     */
+    protected $_helper;
+
+    /**
+     * @var \Magiccart\Shopbrand\Model\ResourceModel\Shopbrand\CollectionFactory
+     */
+
+    protected $_shopbrandCollectionFactory;
+
     public function __construct(
         \Magento\Framework\Model\Context $context,
         \Magento\Framework\Registry $registry,
         \Magento\Framework\App\Config\ScopeConfigInterface $scopeConfig,
+        \Magento\Catalog\Model\Product\Visibility $catalogProductVisibility,
+        \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollectionFactory,
         \Magiccart\Shopbrand\Model\ResourceModel\Shopbrand\CollectionFactory $shopbrandCollectionFactory,
         \Magiccart\Shopbrand\Model\ResourceModel\Shopbrand $resource,
         \Magiccart\Shopbrand\Model\ResourceModel\Shopbrand\Collection $resourceCollection,
-        \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollectionFactory
+        \Magiccart\Shopbrand\Helper\Data $helper
     ) {
         parent::__construct(
             $context,
@@ -38,14 +52,22 @@ class Shopbrand extends \Magento\Framework\Model\AbstractModel
             $resource,
             $resourceCollection
         );
-        $this->_shopbrandCollectionFactory = $shopbrandCollectionFactory;
         $this->_productCollectionFactory = $productCollectionFactory;
-        $this->_scopeConfig= (object) $scopeConfig->getValue(
-            'shopbrand',
-            \Magento\Store\Model\ScopeInterface::SCOPE_STORE
-        );
-    }
+        $this->_catalogProductVisibility = $catalogProductVisibility;
 
+        $this->_helper = $helper;
+        $this->_shopbrandCollectionFactory = $shopbrandCollectionFactory;
+    }
+    /**
+     * Constructor
+     *
+     * @return void
+     */
+    protected function _construct()
+    {
+        parent::_construct();
+        $this->_init('Magiccart\Shopbrand\Model\ResourceModel\Shopbrand');
+    }
     /**
      * Retrieve post related products
      * @param  int $storeId
@@ -63,15 +85,38 @@ class Shopbrand extends \Magento\Framework\Model\AbstractModel
                 $collection->addStoreFilter($storeIds[0]);
             }
 
-            $cfg = $this->_scopeConfig->general;
-            if(isset($cfg['attributeCode'])){
-                $collection->addAttributeToFilter($cfg['attributeCode'],  $this->getOptionId());
+            $attributeCode = $this->_helper->getConfigModule('general/attributeCode');
+            if($attributeCode){
+                $collection->addAttributeToFilter($attributeCode,  $this->getOptionId());
             }
 
             $this->setData('related_products', $collection);
         }
-
+        
         return $this->getData('related_products');
+    }
+    public function getProductsPosition()
+    {
+        if (!$this->getId()) {
+            return [];
+        }
+        $array = $this->getData('products_position');
+        if ($array === null) {
+            $array = $this->getResource()->getProductsPosition($this);
+            $this->setData('products_position', $array);
+        }
+
+        return $array;
+    }
+    public function getProductCollection()
+    {   
+        $collection = $this->_productCollectionFactory->create()->addAttributeToSelect('*')
+                            ->setVisibility($this->_catalogProductVisibility->getVisibleInCatalogIds());
+        $attributeCode = $this->_helper->getConfigModule('general/attributeCode');
+        if($attributeCode){
+            $collection->addAttributeToFilter($attributeCode,  $this->getOptionId());
+        }
+        return $collection;
     }
 
 }

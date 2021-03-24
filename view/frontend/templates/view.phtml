@@ -1,0 +1,16 @@
+<?php
+$brand = $block->getBrand();
+if(!$brand) return;
+$helper =  $this->_helper;
+$image = $brand->getImage();
+$description = $this->getDescription();
+?>
+<h1 class="title"><?php echo $brand->getTitle(); ?></h1>
+<?php if($image) : ?>
+<div class="brand-view">
+    <div class="image">
+        <img class="img-responsive" src="<?= $helper->getMediaUrl($image) ?>" alt="<?= $brand->getTitle(); ?>"/>
+    </div>
+    <?php endif; ?>
+    <?php echo $description ? '<div class="brand-description">' . $description . '</div>' : ''; ?>
+</div>

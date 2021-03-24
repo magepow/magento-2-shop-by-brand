@@ -1,0 +1,51 @@
+<?php 
+$brands = $this->getBrands();
+$filterBrand = $this->getFilterBrand();
+$helper = $this->_helper;
+$keyword = $this->getRequest()->getParam('keyword');
+$title = $helper->getConfigModule('list_page_settings/title_sidebar_brand')
+?>
+<div class="block filter brand-search-sidebar" id="layerednav-filter-block-brand" data-mage-init='{"collapsible":{"openedState": "active", "collapsible": true, "active": false, "collateral": { "openedState": "filter-active", "element": "body" } }}'> 
+    <div class="block-title filter-title">
+        <strong data-role="title" role="tab" aria-selected="true" aria-expanded="true" tabindex="0"><?= $block->escapeHtml(__('Shop By Brand')) ?></strong> 
+    </div> 
+    <div class="block-content filter-content sidebar-shop sidebar-left"> 
+    <strong role="heading" aria-level="2" class="block-subtitle filter-subtitle"><?= $block->escapeHtml(__('Shop Brand Options')) ?></strong> 
+        <div class="filter-options widget widget-filter" id="narrow-by-list-brand" data-role="content" data-mage-init='{"accordion":{"openedState": "active", "active": false, "collapsible": true, "multipleCollapsible": true}}'> 
+            <div data-role="collapsible" class="filter-options-item"> 
+                <div data-role="title" class="filter-options-title"><?= $block->escapeHtml(__('Search brand')) ?></div>
+                <div data-role="content" class="filter-options-content">
+                    <div class="block block-search">
+                        <form class="form minisearch form-search form-search-sidebar-brand" action="<?php /* @escapeNotVerified */ echo $helper->getUrlRouter() ?>" method="get">
+                            <div class="field search">
+                                <div class="control-search">
+                                    <input class="keyword" type="text" name="keyword" placeholder="<?php echo __('Search a brand') ?>" value="<?php echo $block->escapeHtml($keyword) ?>"/>
+                                </div>
+                                <div class="actions">
+                                    <button type="submit" title="<?php echo __('Search') ?>" class="action search">
+                                        <span><?php echo __('Search') ?></span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div data-role="collapsible" class="filter-options-item">
+                <div data-role="title" class="filter-options-title"><?php /* @escapeNotVerified */ echo __('Filter by brand') ?></div>
+                <div data-role="content" class="filter-options-content">
+                    <ol class="items">
+                        <div class="brand-char-sidebar">
+                            <?php foreach($brands as $_brand):?>
+                                <?php $key = $_brand->getData('urlkey'); ?>
+                                <li class="item">
+                                    <a href="<?php /* @escapeNotVerified */ echo $helper->getBrandUrl($key) ?>"><?php echo $_brand->getData('title');?></a>
+                                </li>
+                            <?php endforeach;?>
+                        </div>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

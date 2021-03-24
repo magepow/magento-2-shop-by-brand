@@ -1,0 +1,15 @@
+<?xml version="1.0"?>
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="1column" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="page.main.title">
+            <action method="setPageTitle">
+                <argument translate="true" name="title" xsi:type="string">Brands</argument>
+            </action>
+        </referenceBlock>
+        <referenceContainer name="content">
+            <block class="Magiccart\Shopbrand\Block\ListBrand" name="shopbrand_brand_listbrand" template="brand/list.phtml"/>
+            <block class="Magento\Framework\View\Element\Template" name="brand_filter_by_character" template="Magiccart_Shopbrand::filter/character.phtml"/>
+        </referenceContainer>
+    </body>
+</page>
+

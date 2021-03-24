@@ -18,9 +18,9 @@ abstract class Index extends \Magento\Framework\App\Action\Action
     /**
      * Magicproduct factory.
      *
-     * @var \Magiccart\Magicproduct\Model\MagicproductFactory
+     * @var \Magiccart\Shopbrand\Model\ShopbrandFactory
      */
-    protected $_magicproductFactory;
+    protected $_shopbrandFactory;
 
     protected $_resultPageFactory;
 
