@@ -1,7 +1,7 @@
-# Magento 2 Extention ShopBrand
-**ShopBrand Magento extension** (Magiccart ShopBrand Extension) allow you to show a list of brands as slider to attract customers. Also, The Extension helps Customers shop by their favorite/trusted brands easily.
-## 1. How to install Magento 2 ShopBrand
-### ✓ Install Magiccart Shopbrand via composer (recommend)
+# Magento 2 Shop By Brand Extention
+**Shop By Brand Magento extension** (Magiccart Shop By Brand Extension) allow you to show a list of brands as slider to attract customers. Also, The Extension helps Customers shop by their favorite/trusted brands easily.
+## 1. How to install Magento 2 Shop By Brand
+### ✓ Install Magiccart Shop By Brand via composer (recommend)
 Run the following command in Magento 2 root folder:
 
 ```
@@ -21,7 +21,7 @@ php bin/magento setup:static-content:deploy -f
 - Set up attribute of Brand
 
 ## 3. ShopBrand Magento Extension User Guide
-* [Document](https://docs.alothemes.com/m2/theme/gecko/#sub63)
+* [Document](https://docs.alothemes.com/m2/extension/shopbrand)
 
 ## Donation
 
