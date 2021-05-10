@@ -65,6 +65,17 @@ class ListProduct extends \Magento\Catalog\Block\Product\ListProduct
      * @var \Magento\Store\Model\StoreManagerInterface
      */
     protected $_objectManager;
+
+    /**
+     * @var _stockconfig
+     */
+    protected $_stockConfig;
+
+     /**
+     * @var \Magento\CatalogInventory\Helper\Stock
+     */
+    protected $_stockFilter;
+
     /**
      * [$_brandFactory description]
      * @var \Magiccart\Shopbrand\Model\ShopbrandFactory 
@@ -104,6 +115,8 @@ class ListProduct extends \Magento\Catalog\Block\Product\ListProduct
         \Magento\Framework\ObjectManagerInterface $objectManager,
         \Magento\Catalog\Model\ResourceModel\Product\CollectionFactory $productCollectionFactory,
         \Magento\Catalog\Model\Product\Visibility $catalogProductVisibility,
+        \Magento\CatalogInventory\Helper\Stock $stockFilter,
+        \Magento\CatalogInventory\Model\Configuration $stockConfig,
             array $data = []
     ) {
         $this->_catalogLayer = $layerResolver->get();
@@ -116,6 +129,8 @@ class ListProduct extends \Magento\Catalog\Block\Product\ListProduct
         $this->_objectManager = $objectManager;
         $this->_productCollectionFactory = $productCollectionFactory;
         $this->_catalogProductVisibility = $catalogProductVisibility;
+        $this->_stockFilter = $stockFilter;
+        $this->_stockConfig = $stockConfig;
 
         parent::__construct($context, $postDataHelper, $layerResolver, $categoryRepository, $urlHelper, $data);
     }
@@ -140,14 +155,27 @@ class ListProduct extends \Magento\Catalog\Block\Product\ListProduct
         }
     }
 
-    protected function _getProductCollection()
+    public function getLoadedProductCollection()
     {
         if (is_null($this->_productCollection)) {
-            $type = $this->getType()->getData('option_id');
-            $collection = $this->getBrandProducts($type);
+
+            $brand = $this->getType()->getData('option_id');
+            $collection = $this->getBrandProducts($brand);
+
+            if ($this->_stockConfig->isShowOutOfStock() != 1) {
+                $this->_stockFilter->addInStockFilterToCollection($collection);
+            }
+            // $this->_eventManager->dispatch(
+            //     'catalog_block_product_list_collection',
+            //     ['collection' => $collection]
+            // );
+
             $this->_productCollection = $collection;
         }
-        return $this->_productCollection;
+
+        $page = $this->getRequest()->getParam('p', 1);
+
+        return $this->_productCollection->setCurPage($page);
     }
 
 
@@ -163,12 +191,10 @@ class ListProduct extends \Magento\Catalog\Block\Product\ListProduct
                     ->addMinimalPrice()
                     ->addFinalPrice()
                     ->addTaxPercents()
-                    ->setPageSize($this->_limit)->setCurPage(1);
+                    ->setPageSize($this->_limit);
 
         return $collection;
 
     }
-
-
 
 }
