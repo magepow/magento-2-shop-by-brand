@@ -1,13 +1,10 @@
 <?php
+
 /**
- * Magiccart 
- * @category 	Magiccart 
- * @copyright 	Copyright (c) 2014 Magiccart (http://www.magiccart.net/) 
- * @license 	http://www.magiccart.net/license-agreement.html
- * @Author: DOng NGuyen<nguyen@dvn.com>
- * @@Create Date: 2016-01-05 10:40:51
- * @@Modify Date: 2016-06-28 16:22:03
- * @@Function:
+ * @Author: Alex Dong
+ * @Date:   2021-05-17 14:55:26
+ * @Last Modified by:   Alex Dong
+ * @Last Modified time: 2021-05-17 14:57:30
  */
 
 namespace Magiccart\Shopbrand\Block\Widget;
@@ -47,7 +44,7 @@ class Shopbrand extends Brand
     public function getProductCfg($cfg='')
     {
         if(!$this->_productCfg){
-            $data = $this->_sysCfg->product;
+            $data = $this->_helper->getConfigModule('product');
             if($data['slide']){
                 $data['vertical-Swiping'] = $data['vertical'];
                 $breakpoints = $this->getResponsiveBreakpoints();
