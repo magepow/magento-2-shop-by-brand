@@ -179,10 +179,6 @@
                     <comment>Page Layout</comment>
                     <source_model>Magiccart\Shopbrand\Model\Design\Frontend\Layout</source_model>
                 </field> -->
-                <field id="title_sidebar_brand" translate="label comment" type="text" sortOrder="2"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
-                    <label>Sidebar Title</label>
-                    <comment>Title of the sidebar brand.</comment>
-                </field>
                 <field id="show_product_count" translate="label comment" type="select" sortOrder="10"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
                     <label>Show Product Count</label>
                     <comment>Display the product number next to the Brand name.</comment>
