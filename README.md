@@ -10,6 +10,9 @@ composer require magiccart/shopbrand
 php bin/magento setup:upgrade
 php bin/magento setup:static-content:deploy -f
 ```
+[![Latest Stable Version](https://poser.pugx.org/magiccart/shopbrand/v/stable)](https://packagist.org/packages/magiccart/shopbrand)
+[![Total Downloads](https://poser.pugx.org/magiccart/shopbrand/downloads)](https://packagist.org/packages/magiccart/shopbrand)
+[![Daily Downloads](https://poser.pugx.org/magiccart/shopbrand/d/daily)](https://packagist.org/packages/magiccart/shopbrand)
 
 ## 2. Look in Frontend
 ![widget-img](https://github.com/magiccart/magento2-shopbrand/blob/master/media/shopbrand_frontend.jpg)
