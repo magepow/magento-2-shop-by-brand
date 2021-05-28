@@ -1,7 +1,5 @@
 ## Magento 2 Shop By Brand Extention
 
-**DEPRECATED: This repository is deprecated in favor of https://github.com/magepow/magento-2-shop-by-brand maintained and update by ⚡ [Magepow](https://github.com/magepow)**
-
 **Shop By Brand Magento extension** (Magiccart Shop By Brand Extension) allow you to show a list of brands as slider to attract customers. Also, The Extension helps Customers shop by their favorite/trusted brands easily.
 ## 1. How to install Magento 2 Shop By Brand
 ### ✓ Install Magiccart Shop By Brand via composer (recommend)
