@@ -2,8 +2,6 @@
 
 namespace Magiccart\Shopbrand\Controller;
 
-use Magiccart\Shopbrand\Model\ShopbrandFactory;
-use Magiccart\Shopbrand\Helper\Data;
 
 class Router implements \Magento\Framework\App\RouterInterface
 {
@@ -15,8 +13,8 @@ class Router implements \Magento\Framework\App\RouterInterface
     public function __construct(
         \Magento\Framework\App\ActionFactory $actionFactory,
         \Magento\Framework\App\ResponseInterface $response,
-        ShopbrandFactory $brand,
-        Data $helper
+        \Magiccart\Shopbrand\Model\ShopbrandFactory $brand,
+        \Magiccart\Shopbrand\Helper\Data $helper
     )
     {
         $this->actionFactory = $actionFactory;
@@ -27,6 +25,7 @@ class Router implements \Magento\Framework\App\RouterInterface
 
     public function match(\Magento\Framework\App\RequestInterface $request)
     {
+        if(!$this->helper->getConfigModule('general/enabled')) return;
         $identifier = trim($request->getPathInfo(), '/');
         $router     = $this->helper->getRouter();
         $urlSuffix  = $this->helper->getUrlSuffix();

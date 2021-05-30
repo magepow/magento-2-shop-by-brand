@@ -55,7 +55,7 @@
                     <source_model>Magiccart\Shopbrand\Model\System\Config\Link</source_model>
                 </field>
                 <field id="heading_slide" translate="label comment" sortOrder="9"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
-                    <label>Setting Slide</label>
+                    <label>Setting Slide (For Widget)</label>
                     <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
                 </field>
                 <field id="slide" translate="label comment" type="select" sortOrder="10"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
@@ -117,7 +117,7 @@
                     <validate>validate-zero-or-greater</validate>
                 </field>
                 <field id="heading_responsive" translate="label comment" sortOrder="60"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
-                    <label>Setting Responsive</label>
+                    <label>Setting Responsive (For Widget)</label>
                     <frontend_model>Magento\Config\Block\System\Config\Form\Field\Heading</frontend_model>
                 </field>
                 <field id="mobile" translate="label comment" type="select" sortOrder="70"  showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">

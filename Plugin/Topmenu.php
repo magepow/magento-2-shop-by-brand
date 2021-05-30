@@ -53,7 +53,7 @@ class Topmenu
         $limit = 0
     ) 
     {
-        if(!$this->helper->getConfigModule('general/topmenulink')) return;
+        if(!$this->helper->getConfigModule('general/enabled') || !$this->helper->getConfigModule('general/topmenulink')) return;
         $subject->getMenu()->addChild(
                 new Node(
                     $this->getBrandMenu(),
