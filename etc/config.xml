@@ -26,7 +26,7 @@
                 <infinite>true</infinite>
                 <autoplay>true</autoplay>
                 <dots>false</dots>
-                <rows>1</rows>
+                <rows>0</rows>
                 <speed>300</speed>
                 <autoplay_speed>3000</autoplay_speed>
                 <padding>15</padding>
@@ -87,7 +87,7 @@
                 <infinite>true</infinite>
                 <autoplay>true</autoplay>
                 <dots>false</dots>
-                <rows>1</rows>
+                <rows>0</rows>
                 <speed>300</speed>
                 <autoplay_speed>3000</autoplay_speed>
                 <padding>15</padding>
