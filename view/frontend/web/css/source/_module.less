@@ -70,6 +70,12 @@
 		}
 
 	}
+	.content-products .product-items {
+		opacity: 0;
+	}
+	.content-products .product-items.grid-init, .content-products .product-items.slick-initialized {
+		opacity: 1;
+	}
 }
 & when (@media-common = false) {
 	@media (min-width: 768px) {

@@ -60,7 +60,7 @@ $_aloHelper = $this->helper('Magiccart\Shopbrand\Helper\Alothemes');
                     <div class="images-container">
                         <div class="product-hover">
                             <?php echo $_aloHelper->getLabels($_product); ?>
-                            <?php //echo $_aloHelper->getTimer($_product); ?>
+                            <?php echo $_aloHelper->getTimer($_product); ?>
                             <a href="<?php /* @escapeNotVerified */ echo $_product->getProductUrl() ?>" class="product photo product-item-photo" tabindex="-1">
                                 <?php echo $productImage->toHtml(); ?>
                             </a>

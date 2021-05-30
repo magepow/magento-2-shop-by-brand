@@ -21,7 +21,7 @@ if(!$numTabs) return;
     <?php /* @escapeNotVerified */ echo $this->getTitle() ? '<h3 class="title">' . '<span>' .$this->getTitle(). '</span>' . '</h3>' : '' ?>
     <div class="shopbrand-box">
     	<div class="magictabs" data-ajax ='<?php echo $this->getAjaxCfg() ?>'>
-			<div class="shopbrand"
+			<div class="shopbrand grid-slider"
 			<?php foreach ($this->getFrontendCfg() as $opt) :?>
 				data-<?php /* @escapeNotVerified */ echo $opt ?>='<?php /* @escapeNotVerified */ echo $this->getData($opt) ?>'
 			<?php endforeach;?>  
@@ -45,24 +45,14 @@ if(!$numTabs) return;
 			data-<?php /* @escapeNotVerified */ echo $opt ?>='<?php /* @escapeNotVerified */ echo $this->getProductCfg($opt) ?>'
 		<?php endforeach;?>        
 		>
-		<?php 
-			// $timer = $this->getTimer();
-			// if($timer) echo $this->getContent('product/gridtimer.phtml');	
-			// else echo $this->getContent('product/grid.phtml');	
-			echo $this->getContent('product/grid.phtml');	
-		?>
+		<?php echo $this->getContent('product/grid.phtml'); ?>
 		</div>
 	</div>
 </div>
 <script type="text/javascript">
-    //require(['magicproduct']);
-    require([
-        'jquery',
-        'magiccart/slick',
-        'alothemes',
-        ], function($, slick, alothemes){
-            var shopbrand  = $('.<?php echo $selector ?> .shopbrand');
-            if(shopbrand.length) $('head').append(magicproduct(shopbrand, '.item'));
+    require(['jquery','gridSlider'], function($, gridSlider){
+        var el  = $('.<?php echo $selector ?>');
+        if(el.length) el.gridSlider();
     });
 	require(['magicproduct']);
 </script>
