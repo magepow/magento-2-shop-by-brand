@@ -1,7 +1,29 @@
-## Magento 2 Shop By Brand Extention
+## Magento 2 Shop by Brand
+Magento 2 Shop by Brand by Magepow is an extension that helps you build a branded summary page of the products in your store. Allows you to sell by brand, customers can easily shop by the brand they like.
+### Description
+Your online store is selling many products from different brands. You want to build a page to introduce and synthesize these brands, want to sell by brand so that customers can easily find and shop products by their favorite brand, Magento 2 Shop by Brand Our extension will help you make this a reality.
+### Highlight Features
+#### 1. Brand List Page
+Brand List Page helps customers shop by brand easily when it includes:
+- Brand search box
+- Featured brand slides
+- Filter brands by alphabet
+#### 2. Show brand logo in product page
+Display the brand logo in the specified product page, helping your customers to know which brand your product comes from.
+Magento 2 Shop by Brand supports all types of products: simple, downloadable, configurable, virtual, bundle, gift card.
+Available products can be easily branded in the product edit page.
+#### 3. Add The Brand Widget
+Insert featured brand anywhere easily with The Brand Widget in cms block, cms page.
+#### 4. Add Brand Link to Top Menu
+It is easy to insert featured brands into the menu.
+#### 5. List Product When Click By Brand
+Clicking on a brand anywhere on your website will take you to that brand's Brand Detail Page, which displays all your products under that brand.
+#### 6. Sidebar Shop by Brand
+Display Brand On Sidebar
 
-**Shop By Brand Magento extension** (Magiccart Shop By Brand Extension) allow you to show a list of brands as slider to attract customers. Also, The Extension helps Customers shop by their favorite/trusted brands easily.
-## 1. How to install Magento 2 Shop By Brand
+Download the latest version at [Magento 2 Shop by Brand]()
+
+## How to install Magento 2 Shop By Brand
 ### ✓ Install Magiccart Shop By Brand via composer (recommend)
 Run the following command in Magento 2 root folder:
 
@@ -14,25 +36,14 @@ php bin/magento setup:static-content:deploy -f
 [![Total Downloads](https://poser.pugx.org/magiccart/shopbrand/downloads)](https://packagist.org/packages/magiccart/shopbrand)
 [![Daily Downloads](https://poser.pugx.org/magiccart/shopbrand/d/daily)](https://packagist.org/packages/magiccart/shopbrand)
 
-## 2. Look in Frontend
-![widget-img](https://github.com/magiccart/magento2-shopbrand/blob/master/media/shopbrand_frontend.jpg)
+### Detail User Guide
+* [User Guide Extension](https://docs.alothemes.com/m2/extension/shopbrand/)
 
-## 3. Highlight Features
-- Easy to Enable/Disable module anytime
-- Show the tittle
-- 3 options to set up the function: Link to brand page, Advanced Search Result, Quick search result
-- Upload Brand logo
-- Set up attribute of Brand
+### Donation
 
-## 3. ShopBrand Magento Extension User Guide
-* [Document](https://docs.alothemes.com/m2/extension/shopbrand)
-
-## Donation
-
-If this project help you reduce time to develop, you can give me a cup of coffee :) 
+If this project helps you reduce time to develop, you can give me a cup of coffee :) 
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/paypalme/alopay)
-
 
 **[Our Magento 2 Extensions](https://magepow.com/magento-2-extensions.html)**
 
