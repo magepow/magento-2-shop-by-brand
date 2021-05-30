@@ -155,7 +155,7 @@ class ListProduct extends \Magento\Catalog\Block\Product\ListProduct
         }
     }
 
-    public function getLoadedProductCollection()
+    protected function _getProductCollection()
     {
         if (is_null($this->_productCollection)) {
 
@@ -177,7 +177,6 @@ class ListProduct extends \Magento\Catalog\Block\Product\ListProduct
 
         return $this->_productCollection->setCurPage($page);
     }
-
 
     public function getBrandProducts($brand)
     {   
