@@ -20,6 +20,7 @@ Available products can be easily branded in the product edit page.
 Insert featured brand anywhere easily with The Brand Widget in cms block, cms page.
 #### 4. Add Brand Link to Top Menu
 It is easy to insert featured brands into the menu.
+![Magento 2 Shop by Brand](https://github.com/magepow/magento-2-shop-by-brand/blob/master/media/shop-by-brand-5.png)
 #### 5. List Product When Click By Brand
 Clicking on a brand anywhere on your website will take you to that brand's Brand Detail Page, which displays all your products under that brand.
 
