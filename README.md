@@ -8,16 +8,22 @@ Brand List Page helps customers shop by brand easily when it includes:
 - Brand search box
 - Featured brand slides
 - Filter brands by alphabet
+
+![Magento 2 Shop by Brand](https://github.com/magepow/magento-2-shop-by-brand/blob/master/media/shop-by-brand-1.png)
 #### 2. Show brand logo in product page
 Display the brand logo in the specified product page, helping your customers to know which brand your product comes from.
 Magento 2 Shop by Brand supports all types of products: simple, downloadable, configurable, virtual, bundle, gift card.
 Available products can be easily branded in the product edit page.
+
+![Magento 2 Shop by Brand](https://github.com/magepow/magento-2-shop-by-brand/blob/master/media/shop-by-brand-2.png)
 #### 3. Add The Brand Widget
 Insert featured brand anywhere easily with The Brand Widget in cms block, cms page.
 #### 4. Add Brand Link to Top Menu
 It is easy to insert featured brands into the menu.
 #### 5. List Product When Click By Brand
 Clicking on a brand anywhere on your website will take you to that brand's Brand Detail Page, which displays all your products under that brand.
+
+![Magento 2 Shop by Brand](https://github.com/magepow/magento-2-shop-by-brand/blob/master/media/shop-by-brand-3.gif)
 #### 6. Sidebar Shop by Brand
 Display Brand On Sidebar
 
