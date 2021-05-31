@@ -3,7 +3,7 @@
 	if(!$brand) return;
 ?>
 <div class="brand">
-    <h3><?php echo __('Brand') ?></h3>
+    <h2><?php echo __('Brand') ?></h2>
 	<a href="<?php echo $this->getUrlBrand($brand) ?>">
 		<span><?php echo __($brand->getLabel()) ?></span>
 		<?php if($brand->getData('image')) : ?>
