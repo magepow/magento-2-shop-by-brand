@@ -72,7 +72,8 @@ class View extends \Magento\Framework\View\Element\Template
         $brand   = $this->_brandCollectionFactory->create()
                     ->addFieldToFilter('stores',array( array('finset' => 0), array('finset' => $storeId)))
                     ->addFieldToFilter('option_id', $_brandId)
-                    ->addFieldToFilter('status', 1);
+                    ->addFieldToFilter('status', 1)
+                    ->setPageSize(1);
         $this->_brand = $brand->getFirstItem();
         $this->_brand->setData('label', $labelAtribute);
         // $attr = $_product->getResource()->getAttribute($brandCode);
