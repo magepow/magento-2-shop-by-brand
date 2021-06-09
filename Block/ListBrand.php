@@ -102,10 +102,9 @@ class ListBrand extends Brand implements \Magento\Framework\DataObject\IdentityI
     public function getBrands()
     {
         $keyword = $this->getRequest()->getParam('keyword');
-        $collection = $this->_shopbrandFactory->create()->getCollection();
+        $collection = $this->getBrandCollection();
         if($keyword){
-            $collection->addFieldToFilter('title',['like'=>$keyword.'%'])
-                        ->addFieldToFilter('status', 1);
+            $collection->addFieldToFilter('title',['like'=>$keyword.'%']);
             $collection->setOrder('title','ASC');
         }
         return $collection;
