@@ -25,7 +25,7 @@ It is easy to insert featured brands into the menu.
 #### 5. List Product When Click By Brand
 Clicking on a brand anywhere on your website will take you to that brand's Brand Detail Page, which displays all your products under that brand.
 
-![Magento 2 Shop by Brand](https://github.com/magepow/magento-2-shop-by-brand/blob/master/media/shop-by-brand-3.gif)
+![Magento 2 Shop by Brand](https://github.com/magepow/magento-2-shop-by-brand/blob/master/media/shop-by-brand-7.gif)
 #### 6. Sidebar Shop by Brand
 Display Brand On Sidebar
 
