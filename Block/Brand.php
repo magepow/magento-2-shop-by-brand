@@ -16,17 +16,23 @@ use Magiccart\Shopbrand\Model\Design\Frontend\Responsive;
 
 class Brand extends \Magento\Framework\View\Element\Template
 {
+    /**
+    * @var \Magiccart\Shopbrand\Helper\Data
+    */
     public $_helper;
 
     protected $_imageFactory;
     // protected $_filesystem;
     // protected $_directory;
 
-    protected $_brands = array();
+    protected $_brands = [];
 
+    /**
+    * @var \Magiccart\Shopbrand\Model\ShopbrandFactory
+    */
     protected $_shopbrandFactory;
 
-    protected $_attribute = array();
+    protected $_attribute = [];
 
     /**
     * @var \Magento\Backend\Model\UrlInterface
