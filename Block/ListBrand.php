@@ -70,18 +70,20 @@ class ListBrand extends Brand implements \Magento\Framework\DataObject\IdentityI
                 'label' => __('Home'),
                 'title' => __('Go to Home Page'),
                 'link'  => $this->_storeManager->getStore()->getBaseUrl()
-            ])
-                ->addCrumb('brand', $this->getBreadcrumbsData());
-        }
-        if ($catId = $this->getRequest()->getParam('id')) {
-            $model = $this->_shopbrandFactory->create();
-            $name = $model->load($catId)->getData('title');
-            $breadcrumbs->addCrumb($name, [
-                'label' => $name,
-                'title' => $name
-            ]);
+            ])->addCrumb('brand', $this->getBreadcrumbsData());
         }
 
+        $title = $this->_helper->getConfigModule('general/title');
+        if ($brandId = $this->getRequest()->getParam('id')) {
+            $brand = $this->_shopbrandFactory->create()->load($brandId);
+            $title = $brand->getData('title');
+            $breadcrumbs->addCrumb($title, [
+                'label' => $title,
+                'title' => $title
+            ]);
+        }
+        if(!$title) $title = __('Brand');
+        $this->pageConfig->getTitle()->set(__($title));
         return parent::_prepareLayout();
     }
 
@@ -91,8 +93,8 @@ class ListBrand extends Brand implements \Magento\Framework\DataObject\IdentityI
     protected function getBreadcrumbsData()
     {
         $data = [
-            'label' => 'Brand',
-            'title' => 'Brand'
+            'label' => __('Brand'),
+            'title' => __('Brand')
         ];
         $data['link'] =  $this->_helper->getBrandUrl();
 
