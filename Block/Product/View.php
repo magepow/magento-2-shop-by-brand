@@ -75,14 +75,10 @@ class View extends \Magento\Framework\View\Element\Template
                     ->addFieldToFilter('status', 1)
                     ->setPageSize(1);
         $this->_brand = $brand->getFirstItem();
-        $this->_brand->setData('label', $labelAtribute);
-        // $attr = $_product->getResource()->getAttribute($brandCode);
-        // if ($attr->usesSource()) {
-        //     $optionText = $attr->getSource()->getOptionText($_brandId);
-        //     if($optionText) $this->_brand->setTitle($optionText);
-        // }
-
-        return $this->_brand;
+        if($this->_brand->getId()){
+            $this->_brand->setData('label', $labelAtribute);
+            return $this->_brand;
+        }
     }
 
     public function getUrlBrand($brand)
