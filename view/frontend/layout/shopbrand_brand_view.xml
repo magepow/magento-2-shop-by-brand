@@ -15,8 +15,8 @@
         </referenceContainer>
         <referenceContainer name="content">
             <block class="Magiccart\Shopbrand\Block\Brand\View" name="shopbrand_brand_view" template="view.phtml"/>
-<!--             <block class="Magiccart\Shopbrand\Block\Product\ListProduct" name="custom.products.list" as="product_list" template="product/list.phtml"> -->
-            <block class="Magiccart\Shopbrand\Block\Product\ListProduct" name="custom.products.list" as="product_list" template="Magento_Catalog::product/list.phtml">
+<!--             <block class="Magiccart\Shopbrand\Block\Product\ListProduct" name="shopbrand.products.list" as="product_list" template="product/list.phtml"> -->
+            <block class="Magiccart\Shopbrand\Block\Product\ListProduct" name="shopbrand.products.list" as="product_list" template="Magento_Catalog::product/list.phtml">
                 <container name="category.product.list.additional" as="additional" />
                 <block class="Magento\Framework\View\Element\RendererList" name="category.product.type.details.renderers" as="details.renderers">
                     <block class="Magento\Framework\View\Element\Template" name="category.product.type.details.renderers.default" as="default"/>
@@ -35,5 +35,10 @@
                 </action>
             </block>
         </referenceContainer>
+        <referenceBlock name="shopbrand.products.list">
+            <arguments>
+                <argument name="viewModel" xsi:type="object">Magento\Catalog\ViewModel\Product\OptionsData</argument>
+            </arguments>
+        </referenceBlock>
     </body>
 </page>
