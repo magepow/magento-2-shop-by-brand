@@ -38,6 +38,7 @@
         <referenceBlock name="shopbrand.products.list">
             <arguments>
                 <argument name="viewModel" xsi:type="object">Magento\Catalog\ViewModel\Product\OptionsData</argument>
+                <argument name="positioned" xsi:type="string">positions:list-secondary</argument>
             </arguments>
         </referenceBlock>
     </body>
