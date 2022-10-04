@@ -29,7 +29,7 @@ class Router implements \Magento\Framework\App\RouterInterface
         $identifier = trim($request->getPathInfo(), '/');
         $router     = $this->helper->getRouter();
         $urlSuffix  = $this->helper->getUrlSuffix();
-        if ($length = strlen($urlSuffix)) {
+        if ($length = strlen($urlSuffix ?? '')) {
             if (substr($identifier, -$length) == $urlSuffix) {
                 $identifier = substr($identifier, 0, strlen($identifier) - $length);
             }
