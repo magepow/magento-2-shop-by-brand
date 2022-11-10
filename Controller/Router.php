@@ -35,7 +35,7 @@ class Router implements \Magento\Framework\App\RouterInterface
             }
         }
 
-        $routePath = explode('/', $identifier);
+        $routePath = explode('/', (string) $identifier);
         $routeSize = sizeof($routePath); //den count //
 
         if ($identifier == $router) {

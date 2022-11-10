@@ -81,7 +81,7 @@ class Brand extends \Magento\Framework\View\Element\Template
             $editUrl    = $this->getAdminUrl($adminPath, $routeParams);
             $configUrl  = $this->getAdminUrl('adminhtml/system_config/edit/section/shopbrand');
             $moduleName = $this->getModuleName();
-            $moduleName = str_replace('_', ' > ', $moduleName);
+            $moduleName = str_replace('_', ' > ', (string) $moduleName);
             $quickedit  = [
                 [
                     'title' => __('%1 > %2 :', $moduleName, $class),
