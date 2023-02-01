@@ -2,7 +2,6 @@
 
 namespace Magiccart\Shopbrand\Controller;
 
-
 class Router implements \Magento\Framework\App\RouterInterface
 {
     protected $actionFactory;
@@ -29,7 +28,7 @@ class Router implements \Magento\Framework\App\RouterInterface
         $identifier = trim($request->getPathInfo(), '/');
         $router     = $this->helper->getRouter();
         $urlSuffix  = $this->helper->getUrlSuffix();
-        if ($length = strlen($urlSuffix ?? '')) {
+        if ($length = strlen((string) $urlSuffix)) {
             if (substr($identifier, -$length) == $urlSuffix) {
                 $identifier = substr($identifier, 0, strlen($identifier) - $length);
             }
@@ -45,20 +44,26 @@ class Router implements \Magento\Framework\App\RouterInterface
                     ->setPathInfo('/shopbrand/brand/listbrand');
             return $this->actionFactory->create('Magento\Framework\App\Action\Forward');
 
-        } elseif ($routeSize == 2 && $routePath[0] == $router) {
-            $url_key = $routePath[1];
+        } elseif ($routeSize >= 2 && $routePath[0] == $router) {
+            $url_key = "";
+            foreach($routePath as $key => $value){
+                if($key == 0 ) continue;
+                $url_key .= ($key == 1) ?  $value : "/".$value;
+            }
             $model = $this->_brand->create();
             $model->load($url_key, 'urlkey');
 
 
             if (!empty($model->load($url_key, 'urlkey'))) {
                 $id = $model->load($url_key, 'urlkey')->getData('shopbrand_id');
-                $request->setModuleName('shopbrand')
+                if($id){
+                    $request->setModuleName('shopbrand')
                         ->setControllerName('brand')
                         ->setActionName('view')
                         ->setParam('id', $id)
                         ->setPathInfo('/shopbrand/brand/view');
-                return $this->actionFactory->create('Magento\Framework\App\Action\Forward');
+                    return $this->actionFactory->create('Magento\Framework\App\Action\Forward');
+                }
             }
         } else {
             return;
