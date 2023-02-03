@@ -51,11 +51,10 @@ class Router implements \Magento\Framework\App\RouterInterface
                 $url_key .= ($key == 1) ?  $value : "/".$value;
             }
             $model = $this->_brand->create();
-            $model->load($url_key, 'urlkey');
+            $brandLoad = $model->load($url_key, 'urlkey');
 
-
-            if (!empty($model->load($url_key, 'urlkey'))) {
-                $id = $model->load($url_key, 'urlkey')->getData('shopbrand_id');
+            if (!empty($brandLoad)) {
+                $id = $brandLoad->getData('shopbrand_id');
                 if($id){
                     $request->setModuleName('shopbrand')
                         ->setControllerName('brand')
