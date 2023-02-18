@@ -129,6 +129,10 @@ If this project helps you reduce time to develop, you can give me a cup of coffe
 
 **[Our Shopify App](https://apps.shopify.com/partners/maggicart)**
 
+* [Magepow Infinite Scroll](https://apps.shopify.com/magepow-infinite-scroll)
+
+* [Magepow Promotionbar](https://apps.shopify.com/magepow-promotionbar)
+
 * [Magepow Size Chart](https://apps.shopify.com/magepow-size-chart)
 
 **[Our WordPress Theme](https://themeforest.net/user/alotheme/portfolio)**
