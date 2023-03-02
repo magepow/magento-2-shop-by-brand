@@ -1,3 +1,5 @@
+[<img src="https://github.com/magepow/themeforest/blob/master/shopify/shopify_affiliate.jpg" >](https://shopify.pxf.io/VyL446)
+
 ## Magento 2 Shop by Brand
 Magento 2 Shop by Brand by Magepow is an extension that helps you build a branded summary page of the products in your store. Allows you to sell by brand, customers can easily shop by the brand they like.
 ### Description
