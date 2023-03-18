@@ -97,8 +97,8 @@ $_helper = $this->helper(Magento\Catalog\Helper\Output::class);
                         <?php endif; ?>
 
                         <div class="product-item-inner">
-                            <div class="product actions product-item-actions"<?= strpos($pos, $viewMode . '-actions') ? $block->escapeHtmlAttr($position) : '' ?>>
-                                <div class="actions-primary"<?= strpos($pos, $viewMode . '-primary') ? $block->escapeHtmlAttr($position) : '' ?>>
+                            <div class="product actions product-item-actions"<?= strpos((string) $pos, $viewMode . '-actions') ? $block->escapeHtmlAttr($position) : '' ?>>
+                                <div class="actions-primary"<?= strpos((string) $pos, $viewMode . '-primary') ? $block->escapeHtmlAttr($position) : '' ?>>
                                     <?php if ($_product->isSaleable()) :?>
                                         <?php $postParams = $block->getAddToCartPostParams($_product); ?>
                                         <form data-role="tocart-form"
@@ -126,7 +126,7 @@ $_helper = $this->helper(Magento\Catalog\Helper\Output::class);
                                     <?php endif; ?>
                                 </div>
                                 <?php if ($showWishlist || $showCompare): ?>
-                                    <div data-role="add-to-links" class="actions-secondary add-to-links"<?php echo strpos($pos, $viewMode . '-secondary') ? $position : ''; ?>>
+                                    <div data-role="add-to-links" class="actions-secondary add-to-links"<?php echo strpos((string) $pos, $viewMode . '-secondary') ? $position : ''; ?>>
                                         <?php if ($this->helper('Magento\Wishlist\Helper\Data')->isAllow() && $showWishlist): ?>
                                         <a href="#"
                                         class="action towishlist"
