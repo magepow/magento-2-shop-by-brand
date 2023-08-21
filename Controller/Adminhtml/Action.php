@@ -81,7 +81,7 @@ abstract class Action extends \Magento\Backend\App\Action
         $this->_resultPageFactory = $resultPageFactory;
         $this->_resultLayoutFactory = $resultLayoutFactory;
         $this->_resultForwardFactory = $resultForwardFactory;
-		$this->_resultRedirectFactory = $context->getResultRedirectFactory();
+		$this->resultRedirectFactory = $context->getResultRedirectFactory();
 		
         $this->_shopbrandFactory = $shopbrandFactory;
         $this->_shopbrandCollectionFactory = $shopbrandCollectionFactory;

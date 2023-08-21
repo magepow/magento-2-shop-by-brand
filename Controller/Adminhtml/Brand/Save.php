@@ -21,7 +21,7 @@ class Save extends \Magiccart\Shopbrand\Controller\Adminhtml\Action
      */
     public function execute()
     {
-        $resultRedirect = $this->_resultRedirectFactory->create();
+        $resultRedirect = $this->resultRedirectFactory->create();
 
         if ($data = $this->getRequest()->getPostValue()) {
             $model = $this->_shopbrandFactory->create();

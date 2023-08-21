@@ -27,7 +27,7 @@ class Edit extends \Magiccart\Shopbrand\Controller\Adminhtml\Action
             $model->setStoreViewId($storeViewId)->load($id);
             if (!$model->getId()) {
                 $this->messageManager->addError(__('This Brand no longer exists.'));
-                $resultRedirect = $this->_resultRedirectFactory->create();
+                $resultRedirect = $this->resultRedirectFactory->create();
 
                 return $resultRedirect->setPath('*/*/');
             }
