@@ -123,6 +123,7 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 
     public function getBrandUrl($key='', $suffix=true)
     {
+        if (filter_var($key, FILTER_VALIDATE_URL)) return $key;
         return $this->_storeManager->getStore()->getBaseUrl() . $this->getUrlKey($key, $suffix);
     }
 
