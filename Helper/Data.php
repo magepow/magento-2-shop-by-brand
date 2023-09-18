@@ -135,7 +135,11 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
         $link = '#';
         if(!$typeLink){
             $key  = $brand->getUrlkey();
-            $link = $key ? $baseUrl . $this->getUrlKey($key) : '#';
+            if (filter_var($key, FILTER_VALIDATE_URL)){
+                $link = $key;
+            } else {
+                $link = $key ? $baseUrl . $this->getUrlKey($key) : '#';
+            }
         } elseif($typeLink == '2' && $brand->getOptionId()){
             $link = $baseUrl . 'catalogsearch/advanced/result/?' . $attributeCode . urlencode('[]') . '=' . $brand->getOptionId();
         } elseif($typeLink == '1') {
