@@ -504,6 +504,14 @@
                     <source_model>Magiccart\Shopbrand\Model\System\Config\Col</source_model>
                 </field>
             </group>
+            <group id="shortcode" translate="label" type="text" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Short code</label>
+                <field id="snippet" translate="label comment" sortOrder="3" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <label>Snippet</label>
+                    <comment>Copy to code to page or block you want display Shopbrand</comment>
+                    <frontend_model>Magiccart\Shopbrand\Block\System\Config\Form\Field\Snippet</frontend_model>
+                </field>
+            </group>
         </section>
     </system>
 </config>
