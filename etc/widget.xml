@@ -11,32 +11,32 @@
  */ -->
  
 <widgets xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../Magento/Widget/etc/widget.xsd">
-	<widget id="magiccart_brand" class="Magiccart\Shopbrand\Block\Widget\Brand">
-		<label translate="true">Magiccart Brand Logo Widget</label>
-		<description>Show Brands Logo</description>
-		<parameters>
+    <widget id="magiccart_brand" class="Magiccart\Shopbrand\Block\Widget\Brand">
+        <label translate="true">Magiccart Brand Logo Widget</label>
+        <description translate="true"><![CDATA[Show Brands Logo => Manage in Admin Panel > Magiccart >Shop Brand > Brand. ]]></description>
+        <parameters>
             <parameter name="template" xsi:type="select" required="true" visible="true">
                 <label translate="true">Template</label>
                 <options>
                     <option name="default" value="brand.phtml" selected="true">
-                        <label translate="true">Default</label>
+                        <label translate="true"><![CDATA[Default (brand.phtml)]]></label>
                     </option>
                 </options>
             </parameter>
-		</parameters>
-	</widget>
-	<widget id="magiccart_shopbrand" class="Magiccart\Shopbrand\Block\Widget\Shopbrand">
-		<label translate="true">Magiccart Shop Brand Widget</label>
-		<description>Show Brands Logo and Products</description>
-		<parameters>
+        </parameters>
+    </widget>
+    <widget id="magiccart_shopbrand" class="Magiccart\Shopbrand\Block\Widget\Shopbrand">
+        <label translate="true">Magiccart Shop Brand Widget</label>
+        <description>Show Brands Logo and Products</description>
+        <parameters>
             <parameter name="template" xsi:type="select" required="true" visible="true">
                 <label translate="true">Template</label>
                 <options>
                     <option name="default" value="shopbrand.phtml" selected="true">
-                        <label translate="true">Default</label>
+                        <label translate="true"><![CDATA[Default (shopbrand.phtml)]]></label>
                     </option>
                 </options>
             </parameter>
-		</parameters>
-	</widget>
+        </parameters>
+    </widget>
 </widgets>
