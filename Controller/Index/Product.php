@@ -27,8 +27,15 @@ class Product extends \Magiccart\Shopbrand\Controller\Index
 	        $info = $this->getRequest()->getParam('info');
 	        $type = $this->getRequest()->getParam('type');
 	        $tmp = $info['timer'] ? 'product/gridtimer.phtml':'product/grid.phtml';
-	        $products = $this->_view->getLayout()->createBlock('Magiccart\Shopbrand\Block\Product\GridProduct')
-					            ->setCfg($info)
+	        $products = $this->_view->getLayout()->createBlock(
+									'Magiccart\Shopbrand\Block\Product\GridProduct',
+									"Shopbrand.Product",
+									[
+										'data' => [
+											'positioned' => 'positions:list-secondary'
+										]
+									]
+								)->setCfg($info)
 					           	->setActivated($type)
 					           	->setTemplate($tmp)
 					           	->toHtml();

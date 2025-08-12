@@ -84,8 +84,15 @@ class Shopbrand extends Brand
         $content = '';
         $tabs = ($this->getProductCfg('ajax')) ? $tabs = array($this->getTabActivated() => 'Activated') : $this->getBrands();
         foreach ($tabs as $type => $name) {
-            $content .= $this->getLayout()->createBlock('Magiccart\Shopbrand\Block\Product\GridProduct') // , "magicproduct.product.$type"
-            ->setActivated($type) //or ->setData('activated', $this->getTabActivated())
+            $content .= $this->getLayout()->createBlock(
+                'Magiccart\Shopbrand\Block\Product\GridProduct',
+                "Shopbrand.Product",
+                [
+                    'data' => [
+                        'positioned' => 'positions:list-secondary'
+                    ]
+                ]
+            )->setActivated($type) //or ->setData('activated', $this->getTabActivated())
             ->setCfg($this->getProductCfg())
             ->setTemplate($template)
             ->toHtml();
